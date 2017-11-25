@@ -5,7 +5,8 @@
 
 class ObjBase {
 public:
-	ObjBase() {};
+	ObjBase(const D3DXVECTOR2& pos):
+		m_Pos(pos){};
 	virtual ~ObjBase() {};
 
 	virtual void Update() = 0;

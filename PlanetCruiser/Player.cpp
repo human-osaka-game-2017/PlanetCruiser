@@ -1,6 +1,9 @@
 #include"Player.h"
+#include<Lib.h>
 
-Player::Player() {
+Player::Player():
+	ObjBase(D3DXVECTOR2(0.0,0.0))
+{
 
 }
 
