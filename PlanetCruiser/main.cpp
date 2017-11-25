@@ -2,6 +2,7 @@
 #include<tchar.h>
 #include<stdio.h>
 #include"Common.h"
+#include<Lib.h>
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 	switch (msg)
@@ -72,6 +73,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	ShowWindow(hWnd, SW_SHOW);
 	ShowCursor(false);
 
+	Lib::CreateInstance(hWnd, hInstance);
 
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
@@ -92,6 +94,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			currenttime = timeGetTime();
 
 			if (currenttime - prevtime >= 1000 / 60) {
+			
 			}
 		}
 	}
