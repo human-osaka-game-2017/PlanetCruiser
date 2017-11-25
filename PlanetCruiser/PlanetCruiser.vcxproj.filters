@@ -11,6 +11,12 @@
     <ClCompile Include="MainScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBase.h">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -26,10 +32,16 @@
     <ClInclude Include="MainScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
       <UniqueIdentifier>{4dd273ad-254a-4a39-b5bf-cb2d7c7893d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{5cc0c244-b26b-4b72-9060-67fae1f078d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
