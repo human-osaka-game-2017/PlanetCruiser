@@ -70,12 +70,18 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Desktop\PlanetCruiser\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(OutDir);$(DXSDK_DIR)Lib\x86;D:\Desktop\PlanetCruiser\PlanetCruiser\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(MSBuildStartupDirectory)\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\Desktop\PlanetCruiser\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(OutDir);$(DXSDK_DIR)Lib\x86;D:\Desktop\PlanetCruiser\PlanetCruiser\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(MSBuildStartupDirectory)\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(MSBuildStartupDirectory)\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(MSBuildStartupDirectory)\Lib\myLib;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
