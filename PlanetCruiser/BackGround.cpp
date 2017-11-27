@@ -1,0 +1,55 @@
+#include"Background.h"
+#include"Common.h"
+#include<Lib.h>
+
+const float Background::kScrollSpeed = 0.3f;
+
+Background::Background() :
+	ObjBase(D3DXVECTOR2(kPicWidth/2, 0.0f))
+{
+
+}
+
+Background::~Background() {
+
+}
+
+void Background::Update() {
+	if (m_Pos.y >= kPicHeight) {
+		m_Pos = D3DXVECTOR2(kPicWidth/2, 0.0f);
+	}
+
+	m_Pos.y += kScrollSpeed;
+}
+
+void Background::Draw() {
+	using Utility::CUSTOMVERTEX;
+
+	CUSTOMVERTEX vertex1[]{
+		{ -kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
+		{ kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
+		{ kPicWidth / 2, kPicHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
+		{ -kPicWidth / 2, kPicHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
+	};
+
+	CUSTOMVERTEX vertex2[]{
+		{ -kPicWidth / 2, -kPicHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
+		{ kPicWidth / 2, -kPicHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
+		{ kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
+		{ -kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
+	};
+
+	CUSTOMVERTEX drawVertex1[4];
+	CUSTOMVERTEX drawVertex2[4];
+	for (int i = 0; i < 4; i++) {
+		drawVertex1[i] = vertex1[i];
+		drawVertex1[i].x += m_Pos.x;
+		drawVertex1[i].y += m_Pos.y;
+		drawVertex2[i] = vertex2[i];
+		drawVertex2[i].x += m_Pos.x;
+		drawVertex2[i].y += m_Pos.y;
+	}
+
+	Lib::GetInstance().Draw(drawVertex1, "Assets\\Background.png");
+	Lib::GetInstance().Draw(drawVertex2, "Assets\\Background.png");
+}

@@ -1,14 +1,22 @@
-#ifndef BACKGROUND_H
-#define BACKGROUND_H
+#ifndef Background_H
+#define Background_H
 
 #include"ObjBase.h"
 
-class BackGround: public ObjBase {
+class Background :public ObjBase {
 public:
-	BackGround();
-	~BackGround();
+	Background();
+	virtual ~Background();
 
-	static const float kScrollSpeed = 0.1f;
+	virtual void Update();
+	virtual void Draw();
 
+	static const int kPicWidth = 500;
+	static const int kPicHeight = 1778;
+
+private:
+	int m_FrCnt = 0;
+
+	static const float kScrollSpeed;
 };
 #endif

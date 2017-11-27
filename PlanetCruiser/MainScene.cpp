@@ -1,13 +1,17 @@
 #include"MainScene.h"
 #include<Lib.h>
 #include"Player.h"
+#include"Background.h"
 
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\test.png", Player::kPicWidth, Player::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 
 	ObjBase* player = new Player;
+	ObjBase* background = new Background;
 
 	m_Objects.push_back(player);
+	m_Objects.push_back(background);
 }
 
 MainScene::~MainScene() {

@@ -13,7 +13,6 @@ public:
 
 	virtual SceneManager::SCENE_ID Update();
 	virtual void Draw();
-
 private:
 	std::vector<ObjBase*> m_Objects;
 };
