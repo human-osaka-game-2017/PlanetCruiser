@@ -15,6 +15,4 @@ public:
 protected:
 	D3DXVECTOR2 m_Pos;
 };
-
-
 #endif

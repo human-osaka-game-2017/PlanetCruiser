@@ -3,7 +3,7 @@
 #include"Player.h"
 
 MainScene::MainScene() {
-	Lib::GetInstance().LoadPictureFile("Assets\\sample2.png", Player::kPicWidth, Player::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets/sample2.png", Player::kPicWidth, Player::kPicHeight);
 
 	ObjBase* player = new Player;
 

@@ -13,7 +13,6 @@ SceneManager::~SceneManager() {
 }
 
 void SceneManager::Run() {
-
 	SCENE_ID nextSceneId = m_pScene->Update();
 	m_pScene->Draw();
 

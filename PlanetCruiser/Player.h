@@ -18,5 +18,4 @@ private:
 	const int kWidth = 72;
 	const int kHeight = 110;
 };
-
 #endif

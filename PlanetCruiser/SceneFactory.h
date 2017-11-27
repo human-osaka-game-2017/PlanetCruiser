@@ -24,6 +24,4 @@ private:
 	SceneFactory(const SceneFactory&);
 	void operator = (const SceneFactory&);
 };
-
-
 #endif
