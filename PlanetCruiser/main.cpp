@@ -48,7 +48,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	hWnd = CreateWindow(
 		TEXT("WINDOW"),								//ウィンドウのクラス名
 		"PlanetCruiser", 							//ウィンドウのタイトル
-		WS_VISIBLE | WS_OVERLAPPEDWINDOW,			//ウィンドウスタイル
+		WS_OVERLAPPEDWINDOW | WS_VISIBLE,			//ウィンドウスタイル
 		CW_USEDEFAULT,								// ウィンドウの横方向の位置x
 		CW_USEDEFAULT,								// ウィンドウの縦方向の位置y
 		WINDOW_WIDTH,								// Width（幅）
@@ -95,6 +95,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			currenttime = timeGetTime();
 
 			if (currenttime - prevtime >= 1000 / 60) {
+				Lib::GetInstance().UpdateKey(); 
 				SceneManager.Run();
 			}
 		}
