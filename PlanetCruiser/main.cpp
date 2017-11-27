@@ -24,8 +24,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-	PSTR lpCmdLine, int nCmdShow)
-{
+	PSTR lpCmdLine, int nCmdShow){
 	HWND hWnd;
 
 	WNDCLASSEX Wndclass;
@@ -49,17 +48,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	hWnd = CreateWindow(
 		TEXT("WINDOW"),								//ウィンドウのクラス名
 		"PlanetCruiser", 							//ウィンドウのタイトル
-		WS_VISIBLE | WS_OVERLAPPEDWINDOW,				//ウィンドウスタイル
-		CW_USEDEFAULT,						// ウィンドウの横方向の位置x
-		CW_USEDEFAULT,						// ウィンドウの縦方向の位置y
-		WINDOW_WIDTH,							// Width（幅）
-		WINDOW_HEIGHT,							// Height（高さ）
+		WS_OVERLAPPEDWINDOW | WS_VISIBLE,			//ウィンドウスタイル
+		CW_USEDEFAULT,								// ウィンドウの横方向の位置x
+		CW_USEDEFAULT,								// ウィンドウの縦方向の位置y
+		WINDOW_WIDTH,								// Width（幅）
+		WINDOW_HEIGHT,								// Height（高さ）
 		NULL,
 		NULL,
 		hInstance,							// アプリケーションインスタンスのハンドル
 		NULL
 	);
-	SetProcessDPIAware();					//お守り
+	SetProcessDPIAware();					
 
 	//resize
 	RECT rw, rc;
@@ -96,6 +95,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			currenttime = timeGetTime();
 
 			if (currenttime - prevtime >= 1000 / 60) {
+				Lib::GetInstance().UpdateKey(); 
 				SceneManager.Run();
 			}
 		}

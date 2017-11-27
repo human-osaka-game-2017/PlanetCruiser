@@ -3,7 +3,7 @@
 #include"Player.h"
 
 MainScene::MainScene() {
-	Lib::GetInstance().LoadPictureFile("Assets\\sample2.png", Player::kPicWidth, Player::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\test.png", Player::kPicWidth, Player::kPicHeight);
 
 	ObjBase* player = new Player;
 
@@ -20,10 +20,17 @@ MainScene::~MainScene() {
 SceneManager::SCENE_ID MainScene::Update() {
 	SceneManager::SCENE_ID nextScene = SceneManager::SCENE_ID::MAIN;
 
+	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
+	{
+		(*itr)->Update();
+	}
+
 	return nextScene;
 }
 
 void MainScene::Draw() {
+	Lib::GetInstance().SetRenderState2D();
+
 	Lib::GetInstance().StartDraw();
 
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)

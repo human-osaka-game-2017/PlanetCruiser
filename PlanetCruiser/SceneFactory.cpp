@@ -23,4 +23,3 @@ SceneBase* SceneFactory::Create(SceneManager::SCENE_ID scene_id) {
 
 	return pScene;
 }
-

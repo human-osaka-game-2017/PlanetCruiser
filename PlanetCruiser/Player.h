@@ -11,12 +11,15 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-	static const int kPicWidth =	72;
-	static const int kPicHeight =	110;
+	static const int kPicWidth =	128;
+	static const int kPicHeight =	256;
 
 private:
-	const int kWidth = 72;
-	const int kHeight = 110;
-};
+	float m_Speed = 0.3f;
+	bool m_IsRight = true;
 
+	const float kAcceleration = 0.2f;
+	const int kWidth =	128;
+	const int kHeight = 256;
+};
 #endif

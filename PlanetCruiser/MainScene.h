@@ -17,5 +17,4 @@ public:
 private:
 	std::vector<ObjBase*> m_Objects;
 };
-
 #endif

@@ -19,5 +19,4 @@ private:
 	SceneBase* m_pScene;
 	
 };
-
 #endif

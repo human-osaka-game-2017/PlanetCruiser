@@ -11,5 +11,4 @@ public:
 	virtual SceneManager::SCENE_ID Update() = 0;
 	virtual void Draw() = 0;
 };
-
 #endif
