@@ -26,17 +26,17 @@ void Background::Draw() {
 	using Utility::CUSTOMVERTEX;
 
 	CUSTOMVERTEX vertex1[]{
-		{ -kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
-		{ kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
-		{ kPicWidth / 2, kPicHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
-		{ -kPicWidth / 2, kPicHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
+		{ (float)-kWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
+		{ (float)kWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
+		{ (float)kWidth / 2, (float)kHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
+		{ (float)-kWidth / 2, (float)kHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
 	};
 
 	CUSTOMVERTEX vertex2[]{
-		{ -kPicWidth / 2, -kPicHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
-		{ kPicWidth / 2, -kPicHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
-		{ kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
-		{ -kPicWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
+		{ (float)-kWidth / 2, (float)-kHeight ,0.5f, 1.0f, 0xffffffff, 0.0f, 0.0f },
+		{ (float)kWidth / 2, (float)-kHeight ,0.5f, 1.0f, 0xffffffff, 1.0f, 0.0f },
+		{ (float)kWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 1.0f, 1.0f },
+		{ (float)-kWidth / 2, 0.0f ,0.5f, 1.0f, 0xffffffff, 0.0f, 1.0f }
 	};
 
 	CUSTOMVERTEX drawVertex1[4];

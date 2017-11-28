@@ -1,8 +1,9 @@
 #include"Player.h"
+#include"Common.h"
 #include<Lib.h>
 
 Player::Player():
-	ObjBase(D3DXVECTOR2(100.0,100.0))
+	ObjBase(D3DXVECTOR2(WINDOW_WIDTH/2,700.0))
 {
 
 }
@@ -27,5 +28,5 @@ void Player::Update() {
 }
 
 void Player::Draw() {
-	Lib::GetInstance().Draw(m_Pos, "Assets\\test.png", (float)kWidth, (float)kHeight);
+	Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
 }

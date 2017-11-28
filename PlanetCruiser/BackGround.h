@@ -11,12 +11,14 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-	static const int kPicWidth = 500;
-	static const int kPicHeight = 1778;
+	static const int kPicWidth = 550;
+	static const int kPicHeight = 1024;
 
 private:
 	int m_FrCnt = 0;
 
 	static const float kScrollSpeed;
+	const int kWidth = 550;
+	const int kHeight = 1024;
 };
 #endif

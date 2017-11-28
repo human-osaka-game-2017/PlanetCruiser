@@ -4,14 +4,14 @@
 #include"Background.h"
 
 MainScene::MainScene() {
-	Lib::GetInstance().LoadPictureFile("Assets\\test.png", Player::kPicWidth, Player::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", ObjBase::kPicWidth, ObjBase::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 
 	ObjBase* player = new Player;
 	ObjBase* background = new Background;
 
-	m_Objects.push_back(player);
 	m_Objects.push_back(background);
+	m_Objects.push_back(player);
 }
 
 MainScene::~MainScene() {
@@ -35,7 +35,7 @@ SceneManager::SCENE_ID MainScene::Update() {
 void MainScene::Draw() {
 	Lib::GetInstance().SetRenderState2D();
 
-	Lib::GetInstance().StartDraw();
+	Lib::GetInstance().StartDraw(0x00,0x00,0x00);
 
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
 	{

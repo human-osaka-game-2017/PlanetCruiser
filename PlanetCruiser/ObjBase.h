@@ -12,6 +12,9 @@ public:
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 
+	static const int kPicWidth = 512;
+	static const int kPicHeight = 512;
+
 protected:
 	D3DXVECTOR2 m_Pos;
 };
