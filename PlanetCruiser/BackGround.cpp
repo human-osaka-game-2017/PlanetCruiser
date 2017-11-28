@@ -1,8 +1,9 @@
 #include"Background.h"
 #include"Common.h"
+#include"EndlessSystem.h"
 #include<Lib.h>
 
-const float Background::kScrollSpeed = 0.3f;
+
 
 Background::Background() :
 	ObjBase(D3DXVECTOR2(kPicWidth/2, 0.0f))
@@ -19,7 +20,7 @@ void Background::Update() {
 		m_Pos = D3DXVECTOR2(kPicWidth/2, 0.0f);
 	}
 
-	m_Pos.y += kScrollSpeed;
+	m_Pos.y += EndlessSystem::kScrollSpeed;
 }
 
 void Background::Draw() {

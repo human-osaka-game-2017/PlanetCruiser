@@ -3,6 +3,8 @@
 #include"PatternFactory.h"
 #include<Utility.h>
 
+const float EndlessSystem::kScrollSpeed = 0.3f;
+
 EndlessSystem::EndlessSystem() :
 	ObjBase(D3DXVECTOR2(0.0,0.0))
 {

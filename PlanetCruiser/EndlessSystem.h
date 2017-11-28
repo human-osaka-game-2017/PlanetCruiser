@@ -14,12 +14,13 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-private:
-	Pattern* m_pCurrentPattern;
-	Pattern* m_pNextPattern;
-	PatternFactory* m_pPatternFactory;
+	static const float kScrollSpeed;
 
-	const float kScrollSpeed = 0.3f;
+private:
+	Pattern* m_pCurrentPattern = nullptr;
+	Pattern* m_pNextPattern = nullptr;
+	PatternFactory* m_pPatternFactory = nullptr;
+
 	const int kMaxScrollY = 1280;
 };
 #endif
