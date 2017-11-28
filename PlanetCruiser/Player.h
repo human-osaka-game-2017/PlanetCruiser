@@ -12,10 +12,10 @@ public:
 	virtual void Draw();
 
 private:
-	float m_Speed = 0.3f;
+	float m_Speed = 0.15f;
 	bool m_IsRight = true;
 
-	const float kAcceleration = 0.2f; //‰Á‘¬“x
+	const float kAcceleration = 0.07f; //‰Á‘¬“x
 	const int kWidth =	72;
 	const int kHeight = 110;
 };
