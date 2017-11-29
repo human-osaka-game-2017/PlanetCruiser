@@ -11,6 +11,8 @@ public:
 		float speed = 0.0f;
 		float tlTu = 0.0f;
 		float tlTv = 0.0f;
+		float width = 0.0f;
+		float height = 0.0f;
 		float magnifying = 1.0f;
 	};
 
@@ -20,7 +22,13 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
+	void PullDown();
+	const AsteroidIniData& GetAsteroidData() {
+		return m_AsteroidData;
+	}
+
 private:
 	AsteroidIniData m_AsteroidData;
+	const int kSwitchPoint = -100;
 };
 #endif

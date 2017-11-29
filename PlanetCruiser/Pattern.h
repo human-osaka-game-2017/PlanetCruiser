@@ -7,13 +7,15 @@ class Asteroid;
 
 class Pattern{
 public:
-	Pattern(std::vector<Asteroid*> pAsteroids);
+	Pattern(const std::vector<Asteroid*>& asteroids);
 	~Pattern();
 
 	void Update();
 	void Draw();
 
+	void PullDown();
+
 private:
-	std::vector<Asteroid*> m_pAsteroids;
+	std::vector<Asteroid*> m_Asteroids;
 };
 #endif

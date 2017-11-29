@@ -26,9 +26,6 @@
     <ClCompile Include="PatternManager.cpp">
       <Filter>Obj\Pattern</Filter>
     </ClCompile>
-    <ClCompile Include="PatternFactory.cpp">
-      <Filter>Obj\Pattern</Filter>
-    </ClCompile>
     <ClCompile Include="Pattern.cpp">
       <Filter>Obj\Pattern</Filter>
     </ClCompile>
@@ -60,9 +57,6 @@
       <Filter>Obj\Pattern\Asteroid</Filter>
     </ClInclude>
     <ClInclude Include="PatternManager.h">
-      <Filter>Obj\Pattern</Filter>
-    </ClInclude>
-    <ClInclude Include="PatternFactory.h">
       <Filter>Obj\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="Pattern.h">

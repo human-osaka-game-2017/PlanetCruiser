@@ -9,7 +9,7 @@ class PatternManager {
 public:
 	enum PATTERN_KIND {
 		PATTERN_0,
-		PATTERN_1,
+		//PATTERN_1,
 		MAX
 	};
 
@@ -21,11 +21,12 @@ public:
 private:
 	std::map<PATTERN_KIND,std::vector<Asteroid*>> m_pPatterns;
 
-	//fileName ó·Åj".\\Assets\\test.ini
-	std::vector<Asteroid*>* LoadIniFile(const char* fileName, std::vector<Asteroid*>* asteroids);
+	//fileName ó·Åj".\\Assets\\test.ini"
+	std::vector<Asteroid*>* LoadIniFile(const char* fileName, std::vector<Asteroid*>* pAsteroids);
 
 	struct UV {
 		float tu, tv;
+		float width, height;
 	};
 
 	std::map<std::string, UV> m_UVData;
