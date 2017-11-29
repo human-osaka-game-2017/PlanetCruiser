@@ -8,6 +8,6 @@ PatternFactory::~PatternFactory() {
 
 }
 
-Pattern* PatternFactory::Create(PatternManager::PATTERN_KIND) {
+Pattern* PatternFactory::Create(const std::vector<Asteroid*>& asteroids) {
 	return 0;
 }

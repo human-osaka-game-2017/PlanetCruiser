@@ -2,13 +2,14 @@
 #include<string>
 
 PatternManager::PatternManager() {
+	InitUVData();
 	LoadIniFile(".\\Assets\\pattern0.ini", &m_pPatterns[PATTERN_0]);
 }
 
 PatternManager::~PatternManager() {
 	for (auto mitr = m_pPatterns.begin(); mitr != m_pPatterns.end(); mitr++)
 	{
-		for (auto vitr = (mitr->second).begin(); vitr != (mitr->second).end(); mitr++) {
+		for (auto vitr = (mitr->second).begin(); vitr != (mitr->second).end(); vitr++) {
 			delete *vitr;
 		}
 	}
@@ -53,7 +54,7 @@ std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::v
 		astData.tlTu = m_UVData[std::string(buff)].tu;
 		astData.tlTv = m_UVData[std::string(buff)].tv;
 
-		(*asteroids)[i] = new Asteroid(astData);
+		asteroids->push_back(new Asteroid(astData));
 	}
 
 	return asteroids;

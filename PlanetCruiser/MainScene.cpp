@@ -2,6 +2,7 @@
 #include<Lib.h>
 #include"Player.h"
 #include"Background.h"
+#include"EndlessSystem.h"
 
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", ObjBase::kPicWidth, ObjBase::kPicHeight);
@@ -9,9 +10,11 @@ MainScene::MainScene() {
 
 	ObjBase* player = new Player;
 	ObjBase* background = new Background;
+	ObjBase* endlessSystem = new EndlessSystem;
 
 	m_Objects.push_back(background);
 	m_Objects.push_back(player);
+	m_Objects.push_back(endlessSystem);
 }
 
 MainScene::~MainScene() {

@@ -5,6 +5,7 @@
 
 class Pattern;
 class PatternFactory;
+class PatternManager;
 
 class EndlessSystem :public ObjBase {
 public:
@@ -19,7 +20,9 @@ public:
 private:
 	Pattern* m_pCurrentPattern = nullptr;
 	Pattern* m_pNextPattern = nullptr;
+
 	PatternFactory* m_pPatternFactory = nullptr;
+	PatternManager* m_pPatternManager = nullptr;
 
 	const int kMaxScrollY = 1280;
 };

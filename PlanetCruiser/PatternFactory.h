@@ -10,6 +10,6 @@ public:
 	PatternFactory();
 	~PatternFactory();
 
-	Pattern* Create(PatternManager::PATTERN_KIND);
+	Pattern* Create(const std::vector<Asteroid*>& asteroids);
 };
 #endif
