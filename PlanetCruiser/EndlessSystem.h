@@ -4,7 +4,7 @@
 #include"ObjBase.h"
 
 class Pattern;
-class PatternFactory;
+class PatternManager;
 
 class EndlessSystem :public ObjBase {
 public:
@@ -15,12 +15,12 @@ public:
 	virtual void Draw();
 
 	static const float kScrollSpeed;
+	static const int kMaxScrollY;
 
 private:
 	Pattern* m_pCurrentPattern = nullptr;
 	Pattern* m_pNextPattern = nullptr;
-	PatternFactory* m_pPatternFactory = nullptr;
 
-	const int kMaxScrollY = 1280;
+	PatternManager* m_pPatternManager = nullptr;
 };
 #endif

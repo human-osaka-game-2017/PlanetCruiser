@@ -134,6 +134,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="ObjBase.h" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Pattern.cpp" />
+    <ClCompile Include="PatternManager.cpp" />
+>>>>>>> working
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -142,6 +147,11 @@
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="MainScene.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Pattern.h" />
+    <ClInclude Include="PatternManager.h" />
+>>>>>>> working
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneFactory.h" />

@@ -1,25 +1,31 @@
 #include"PatternManager.h"
 #include<string>
+#include"Common.h"
 
 PatternManager::PatternManager() {
+	InitUVData();
 	LoadIniFile(".\\Assets\\pattern0.ini", &m_pPatterns[PATTERN_0]);
 }
 
 PatternManager::~PatternManager() {
 	for (auto mitr = m_pPatterns.begin(); mitr != m_pPatterns.end(); mitr++)
 	{
-		for (auto vitr = (mitr->second).begin(); vitr != (mitr->second).end(); mitr++) {
+		for (auto vitr = (mitr->second).begin(); vitr != (mitr->second).end(); vitr++) {
 			delete *vitr;
 		}
 	}
 }
 
 void PatternManager::InitUVData() {
-	UV normal = { 0.0f,0.0f };
-	m_UVData["NORMAL"] = normal;
+	UV tmpNormal = { 0.0f,120.0f,140.0f,140.0f };
+	m_UVData["NORMAL"] = tmpNormal;
+	UV tmpWide = { 140.0f,120.0f,250.0f,120.0f };
+	m_UVData["WIDE"] = tmpWide;
+	UV tmpSlender = { 0.0f,120.0f ,110.0f,220.0f };
+	m_UVData["SLENDER"] = tmpSlender;
 }
 
-std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::vector<Asteroid*>* asteroids) {
+std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::vector<Asteroid*>* pAsteroids) {
 	char asteroidNumBuff[256];
 	ZeroMemory(asteroidNumBuff, sizeof(asteroidNumBuff));
 	GetPrivateProfileString("Header", "AsteroidNum", "", asteroidNumBuff, sizeof(asteroidNumBuff), fileName);
@@ -38,7 +44,7 @@ std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::v
 
 		ZeroMemory(buff, sizeof(buff));
 		GetPrivateProfileString(name.c_str(), "Y座標", "", buff, sizeof(buff), fileName);
-		astData.y = std::stof(buff);
+		astData.y = -(std::stof(buff) - WINDOW_HEIGHT);
 
 		ZeroMemory(buff, sizeof(buff));
 		GetPrivateProfileString(name.c_str(), "スピード", "", buff, sizeof(buff), fileName);
@@ -52,11 +58,13 @@ std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::v
 		GetPrivateProfileString(name.c_str(), "種類", "", buff, sizeof(buff), fileName);
 		astData.tlTu = m_UVData[std::string(buff)].tu;
 		astData.tlTv = m_UVData[std::string(buff)].tv;
+		astData.width = m_UVData[std::string(buff)].width;
+		astData.height = m_UVData[std::string(buff)].height;
 
-		(*asteroids)[i] = new Asteroid(astData);
+		pAsteroids->push_back(new Asteroid(astData));
 	}
 
-	return asteroids;
+	return pAsteroids;
 }
 
 const std::vector<Asteroid*>& PatternManager::GetPatternInfo(PATTERN_KIND kind) {
