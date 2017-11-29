@@ -2,6 +2,7 @@
 #define PATTERNMANAGER_H
 
 #include<vector>
+#include<map>
 #include"Asteroid.h"
 
 class PatternManager {
@@ -18,6 +19,16 @@ public:
 	~PatternManager();
 
 private:
-	std::vector<std::vector<Asteroid*>> m_pPatterns;
+	std::map<PATTERN_KIND,std::vector<Asteroid*>> m_pPatterns;
+
+	//fileName ó·Åj".\\Assets\\test.ini
+	std::vector<Asteroid*> LoadIniFile(const char* fileName, std::vector<Asteroid*> asteroids);
+
+	struct UV {
+		float tu, tv;
+	};
+
+	std::map<std::string, UV> m_UVData;
+	void InitUVData();
 };
 #endif

@@ -6,13 +6,15 @@
 class Asteroid :public ObjBase {
 public:
 	struct AsteroidIniData {
+		float x = 0.0f;
+		float y = 0.0f;
 		float speed = 0.0f;
-		float tu = 0.0f;
-		float tv = 0.0f;
+		float tlTu = 0.0f;
+		float tlTv = 0.0f;
 		float magnifying = 1.0f;
 	};
 
-	Asteroid(float x, float y, const AsteroidIniData& astData);
+	Asteroid(const AsteroidIniData& astData);
 	virtual ~Asteroid();
 
 	virtual void Update();

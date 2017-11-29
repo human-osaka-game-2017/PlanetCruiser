@@ -17,6 +17,5 @@ public:
 private:
 	SCENE_ID m_CurrentSceneId = MAIN;
 	SceneBase* m_pScene;
-	
 };
 #endif

@@ -17,7 +17,6 @@ public:
 private:
 	int m_FrCnt = 0;
 
-	static const float kScrollSpeed;
 	const int kWidth = 550;
 	const int kHeight = 1024;
 };

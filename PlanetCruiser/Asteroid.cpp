@@ -1,7 +1,7 @@
 #include"Asteroid.h"
 
-Asteroid::Asteroid(float x, float y, const AsteroidIniData& astData) :
-	ObjBase(D3DXVECTOR2(x, y)),
+Asteroid::Asteroid(const AsteroidIniData& astData) :
+	ObjBase(D3DXVECTOR2(astData.x, astData.y)),
 	m_AsteroidData(astData)
 {
 }
