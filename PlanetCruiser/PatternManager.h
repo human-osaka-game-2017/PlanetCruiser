@@ -13,7 +13,7 @@ public:
 		MAX
 	};
 
-	const std::vector<Asteroid*> GetPatternInfo(PATTERN_KIND kind);
+	const std::vector<Asteroid*>& GetPatternInfo(PATTERN_KIND kind);
 
 	PatternManager();
 	~PatternManager();
@@ -22,7 +22,7 @@ private:
 	std::map<PATTERN_KIND,std::vector<Asteroid*>> m_pPatterns;
 
 	//fileName ó·Åj".\\Assets\\test.ini
-	std::vector<Asteroid*> LoadIniFile(const char* fileName, std::vector<Asteroid*> asteroids);
+	std::vector<Asteroid*>* LoadIniFile(const char* fileName, std::vector<Asteroid*>* asteroids);
 
 	struct UV {
 		float tu, tv;

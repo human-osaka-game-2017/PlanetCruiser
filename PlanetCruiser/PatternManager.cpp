@@ -2,22 +2,24 @@
 #include<string>
 
 PatternManager::PatternManager() {
-	LoadIniFile(".\\Assets\\pattern0.ini", m_pPatterns[PATTERN_0]);
+	LoadIniFile(".\\Assets\\pattern0.ini", &m_pPatterns[PATTERN_0]);
 }
 
 PatternManager::~PatternManager() {
 	for (auto mitr = m_pPatterns.begin(); mitr != m_pPatterns.end(); mitr++)
 	{
-		for (auto vitr = (*mitr)->begin(); vitr != (*mitr).end(); mitr++) {
+		for (auto vitr = (mitr->second).begin(); vitr != (mitr->second).end(); mitr++) {
+			delete *vitr;
 		}
 	}
 }
 
 void PatternManager::InitUVData() {
-
+	UV normal = { 0.0f,0.0f };
+	m_UVData["NORMAL"] = normal;
 }
 
-std::vector<Asteroid*> PatternManager::LoadIniFile(const char* fileName, std::vector<Asteroid*> asteroids) {
+std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::vector<Asteroid*>* asteroids) {
 	char asteroidNumBuff[256];
 	ZeroMemory(asteroidNumBuff, sizeof(asteroidNumBuff));
 	GetPrivateProfileString("Header", "AsteroidNum", "", asteroidNumBuff, sizeof(asteroidNumBuff), fileName);
@@ -51,10 +53,12 @@ std::vector<Asteroid*> PatternManager::LoadIniFile(const char* fileName, std::ve
 		astData.tlTu = m_UVData[std::string(buff)].tu;
 		astData.tlTv = m_UVData[std::string(buff)].tv;
 
-		asteroids[i] = new Asteroid(astData);
+		(*asteroids)[i] = new Asteroid(astData);
 	}
+
+	return asteroids;
 }
 
-const std::vector<Asteroid*> PatternManager::GetPatternInfo(PATTERN_KIND kind) {
+const std::vector<Asteroid*>& PatternManager::GetPatternInfo(PATTERN_KIND kind) {
 	return m_pPatterns[kind];
 }
