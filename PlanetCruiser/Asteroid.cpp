@@ -3,7 +3,7 @@
 #include<Lib.h>
 
 Asteroid::Asteroid(const AsteroidIniData& astData) :
-	ObjBase(D3DXVECTOR2(astData.x, astData.y)),
+	ObjectBase(D3DXVECTOR3(astData.x, astData.y, 0.0f)),
 	m_AsteroidData(astData)
 {
 	m_Pos.y -= EndlessSystem::kMaxScrollY;

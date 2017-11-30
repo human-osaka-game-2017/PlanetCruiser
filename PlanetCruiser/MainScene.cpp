@@ -5,12 +5,12 @@
 #include"EndlessSystem.h"
 
 MainScene::MainScene() {
-	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", ObjBase::kPicWidth, ObjBase::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 
-	ObjBase* player = new Player;
-	ObjBase* background = new Background;
-	ObjBase* endlessSystem = new EndlessSystem;
+	ObjectBase* player = new Player;
+	ObjectBase* background = new Background;
+	ObjectBase* endlessSystem = new EndlessSystem;
 
 	m_Objects.push_back(background);
 	m_Objects.push_back(player);

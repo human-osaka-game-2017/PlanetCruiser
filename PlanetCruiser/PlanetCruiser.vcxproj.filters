@@ -8,9 +8,6 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBase.h">
-      <Filter>Obj</Filter>
-    </ClCompile>
     <ClCompile Include="BackGround.cpp">
       <Filter>Obj\backgroune</Filter>
     </ClCompile>

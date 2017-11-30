@@ -3,7 +3,7 @@
 #include<Lib.h>
 
 Player::Player():
-	ObjBase(D3DXVECTOR2(WINDOW_WIDTH/2,700.0))
+	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH/2.0f,700.0f))
 {
 
 }
