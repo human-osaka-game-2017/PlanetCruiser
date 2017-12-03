@@ -1,12 +1,12 @@
 #ifndef ENDLESSSYSTEM_H
 #define ENDLESSSYSTEM_H
 
-#include"ObjBase.h"
+#include<ObjectBase.h>
 
 class Pattern;
 class PatternManager;
 
-class EndlessSystem :public ObjBase {
+class EndlessSystem :public ObjectBase {
 public:
 	EndlessSystem();
 	virtual ~EndlessSystem();

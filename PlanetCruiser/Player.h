@@ -1,9 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include"ObjBase.h"
+#include<ObjectBase.h>
 
-class Player :public ObjBase {
+class Player :public ObjectBase {
 public:
 	Player();
 	virtual ~Player();

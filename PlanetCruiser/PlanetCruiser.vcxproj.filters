@@ -8,11 +8,16 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="MainScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="ObjBase.h">
       <Filter>Obj</Filter>
+=======
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Obj\backgroune</Filter>
+>>>>>>> eb6dacc16006a054ea91724e68d617f010c762c8
     </ClCompile>
     <ClCompile Include="Player.cpp">
 <<<<<<< HEAD

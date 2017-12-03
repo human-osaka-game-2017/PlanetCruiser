@@ -1,9 +1,9 @@
 #ifndef Background_H
 #define Background_H
 
-#include"ObjBase.h"
+#include<ObjectBase.h>
 
-class Background :public ObjBase {
+class Background :public ObjectBase {
 public:
 	Background();
 	virtual ~Background();

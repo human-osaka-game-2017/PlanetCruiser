@@ -1,9 +1,9 @@
 #ifndef ASTEROID_H
 #define ASTEROID_H
 
-#include"ObjBase.h"
+#include<ObjectBase.h>
 
-class Asteroid :public ObjBase {
+class Asteroid :public ObjectBase {
 public:
 	struct AsteroidIniData {
 		float x = 0.0f;

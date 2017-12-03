@@ -88,6 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;dxguid.lib;dinput8.lib;dsound.lib;winmm.lib;Xinput.lib;myLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -108,6 +109,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -133,9 +135,12 @@
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="ObjBase.h" />
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> eb6dacc16006a054ea91724e68d617f010c762c8
     <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="PatternManager.cpp" />
 >>>>>>> working

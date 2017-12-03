@@ -4,7 +4,7 @@
 #include<vector>
 #include"SceneBase.h"
 
-class ObjBase;
+class ObjectBase;
 
 class MainScene :public SceneBase {
 public:
@@ -14,6 +14,9 @@ public:
 	virtual SceneManager::SCENE_ID Update();
 	virtual void Draw();
 private:
-	std::vector<ObjBase*> m_Objects;
+	std::vector<ObjectBase*> m_Objects;
+
+	const int kPicWidth = 512;
+	const int kPicHeight = 512;
 };
 #endif

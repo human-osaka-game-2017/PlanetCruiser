@@ -7,7 +7,7 @@ const float EndlessSystem::kScrollSpeed = 1.0f;
 const int EndlessSystem::kMaxScrollY = 1280;
 
 EndlessSystem::EndlessSystem() :
-	ObjBase(D3DXVECTOR2(0.0,0.0))
+	ObjectBase(D3DXVECTOR2(0.0,0.0))
 {
 	m_pPatternManager = new PatternManager;
 
