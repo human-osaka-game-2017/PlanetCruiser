@@ -3,6 +3,7 @@
 #include"Player.h"
 #include"Background.h"
 #include"EndlessSystem.h"
+#include<ColliderManager.h>
 
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
@@ -31,6 +32,8 @@ SceneManager::SCENE_ID MainScene::Update() {
 	{
 		(*itr)->Update();
 	}
+
+	ColliderManager::GetInstance().Update();
 
 	return nextScene;
 }

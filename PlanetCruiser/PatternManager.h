@@ -27,6 +27,7 @@ private:
 	struct UV {
 		float tu, tv;
 		float width, height;
+		float collidedWidth, collidedHeight;
 	};
 
 	std::map<std::string, UV> m_UVData;
