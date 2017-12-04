@@ -1,16 +1,23 @@
 #include"Asteroid.h"
 #include"EndlessSystem.h"
 #include<Lib.h>
+#include<SquareCollider.h>
+#include<ColliderManager.h>
 
 Asteroid::Asteroid(const AsteroidIniData& astData) :
 	ObjectBase(D3DXVECTOR3(astData.x, astData.y, 0.0f)),
 	m_AsteroidData(astData)
 {
 	m_Pos.y -= EndlessSystem::kMaxScrollY;
+
+	SquareCollider::Size size{ m_AsteroidData.collidedWidth,m_AsteroidData.collidedHeight };
+	m_pCollider = new SquareCollider(std::string("Asteroid"), m_Pos, std::bind(&Asteroid::Collision, this), size);
+	ColliderManager::GetInstance().Register(m_pCollider);
 }
 
 Asteroid::~Asteroid() {
-
+	ColliderManager::GetInstance().Cancel(m_pCollider);
+	delete m_pCollider;
 }
 
 void Asteroid::Update() {
@@ -20,6 +27,8 @@ void Asteroid::Update() {
 	else {
 		m_Pos.y += m_AsteroidData.speed;
 	}
+
+	m_pCollider->SetPos(m_Pos);
 }
 
 void Asteroid::Draw() {
@@ -30,4 +39,8 @@ void Asteroid::Draw() {
 
 void Asteroid::PullDown() {
 	m_Pos.y += EndlessSystem::kMaxScrollY;
+}
+
+void Asteroid::Collision() {
+
 }

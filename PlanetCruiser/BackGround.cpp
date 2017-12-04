@@ -3,8 +3,6 @@
 #include"EndlessSystem.h"
 #include<Lib.h>
 
-
-
 Background::Background() :
 	ObjectBase(D3DXVECTOR2(kPicWidth/2, 0.0f))
 {

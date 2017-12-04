@@ -2,6 +2,7 @@
 #define ASTEROID_H
 
 #include<ObjectBase.h>
+class SquareCollider;
 
 class Asteroid :public ObjectBase {
 public:
@@ -13,6 +14,8 @@ public:
 		float tlTv = 0.0f;
 		float width = 0.0f;
 		float height = 0.0f;
+		float collidedWidth = 0.0f;
+		float collidedHeight = 0.0f;
 		float magnifying = 1.0f;
 	};
 
@@ -30,5 +33,8 @@ public:
 private:
 	AsteroidIniData m_AsteroidData;
 	const int kSwitchPoint = -100;
+	SquareCollider* m_pCollider;
+
+	void Collision();
 };
 #endif

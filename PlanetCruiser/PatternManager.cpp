@@ -17,11 +17,11 @@ PatternManager::~PatternManager() {
 }
 
 void PatternManager::InitUVData() {
-	UV tmpNormal = { 0.0f,120.0f,140.0f,140.0f };
+	UV tmpNormal = { 0.0f,120.0f,140.0f,140.0f, 140.0f, 140.0f };
 	m_UVData["NORMAL"] = tmpNormal;
-	UV tmpWide = { 140.0f,120.0f,250.0f,120.0f };
+	UV tmpWide = { 140.0f,120.0f,250.0f,120.0f,250.0f,120.0f };
 	m_UVData["WIDE"] = tmpWide;
-	UV tmpSlender = { 390.0f,120.0f ,110.0f,220.0f };
+	UV tmpSlender = { 390.0f,120.0f ,110.0f,220.0f,110.0f,220.0f };
 	m_UVData["SLENDER"] = tmpSlender;
 }
 
@@ -60,6 +60,8 @@ std::vector<Asteroid*>* PatternManager::LoadIniFile(const char* fileName, std::v
 		astData.tlTv = m_UVData[std::string(buff)].tv;
 		astData.width = m_UVData[std::string(buff)].width;
 		astData.height = m_UVData[std::string(buff)].height;
+		astData.collidedWidth = m_UVData[std::string(buff)].collidedWidth;
+		astData.collidedHeight = m_UVData[std::string(buff)].collidedHeight;
 
 		pAsteroids->push_back(new Asteroid(astData));
 	}
