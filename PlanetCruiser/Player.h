@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include<ObjectBase.h>
+#include<Font.h>
 
 class SquareCollider;
 
@@ -13,10 +14,16 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
+	bool GetCollidedFlg() {
+		return m_WasCllided;
+	}
+
 private:
 	SquareCollider* m_pCollider;
+	Font* m_pFont;
 	float m_Speed = 0.15f;
 	bool m_IsRight = true;
+	bool m_WasCllided = false;
 
 	void Collision();
 

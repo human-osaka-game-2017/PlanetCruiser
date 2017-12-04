@@ -10,14 +10,18 @@ Player::Player():
 	SquareCollider::Size size{ kCollideWidth,kCollideHeight };
 	m_pCollider = new SquareCollider(std::string("Player"), m_Pos, std::bind(&Player::Collision, this), size);
 	ColliderManager::GetInstance().Register(m_pCollider);
+
+	m_pFont = new Font("HIT!!");
 }
 
 Player::~Player() {
 	ColliderManager::GetInstance().Cancel(m_pCollider);
 	delete m_pCollider;
+	delete m_pFont;
 }
 
 void Player::Update() {
+	m_WasCllided = false;
 	if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
 		m_IsRight = !m_IsRight;
 	}
@@ -36,9 +40,14 @@ void Player::Update() {
 
 void Player::Draw() {
 	Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
+
+	if (m_WasCllided) {
+		RECT rect = { 20,10,100,50 };
+		m_pFont->DrawInDisplay(rect);
+	}
 }
 
 void Player::Collision() {
 	
-	OutputDebugString("fuck you");
+	m_WasCllided = true;
 }
