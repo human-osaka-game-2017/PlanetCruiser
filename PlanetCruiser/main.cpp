@@ -76,25 +76,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
 
-	DWORD prevtime = timeGetTime();
-	DWORD currenttime;
+	DWORD prevTime = timeGetTime();
+	DWORD currentTime;
 
 	timeBeginPeriod(1);
+	int frCnt = 0;
 
 	while (msg.message != WM_QUIT) {
+
+		currentTime = timeGetTime();
 
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) != false) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
 		else {
-
-			currenttime = timeGetTime();
-
-			if (currenttime - prevtime >= 1000 / 60) {
+			if (currentTime - prevTime >= 1000 / 60) {
+				++frCnt;
 				Lib::GetInstance().UpdateKey(); 
 				SceneManager.Run();
 			}
+		}
+
+		if (currentTime - prevTime >= 1000) {
+			Utility::OutputDebug_Number(frCnt, hWnd);
+			frCnt = 0;
+			prevTime = currentTime;
 		}
 	}
 	timeEndPeriod(1);
