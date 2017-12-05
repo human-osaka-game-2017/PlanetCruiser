@@ -29,6 +29,9 @@
     <ClCompile Include="EndlessSystem.cpp">
       <Filter>Obj\Pattern</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Obj\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -62,6 +65,9 @@
     <ClInclude Include="EndlessSystem.h">
       <Filter>Obj\Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Obj\Score</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -84,6 +90,9 @@
     </Filter>
     <Filter Include="Obj\Pattern\Asteroid">
       <UniqueIdentifier>{330bc8de-f1fc-4c3a-8e8e-868b9e21c5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Score">
+      <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -3,11 +3,14 @@
 #include"Player.h"
 #include"Background.h"
 #include"EndlessSystem.h"
+#include"Score.h"
 #include<ColliderManager.h>
+#include"Score.h"
 
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
 
 	ObjectBase* player = new Player;
 	ObjectBase* background = new Background;
@@ -35,6 +38,8 @@ SceneManager::SCENE_ID MainScene::Update() {
 
 	ColliderManager::GetInstance().Update();
 
+	Score::GetInstance().Update();
+
 	return nextScene;
 }
 
@@ -47,6 +52,8 @@ void MainScene::Draw() {
 	{
 		(*itr)->Draw();
 	}
+
+	Score::GetInstance().Draw();
 
 	Lib::GetInstance().EndDraw();
 }
