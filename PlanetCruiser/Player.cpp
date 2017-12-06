@@ -38,6 +38,12 @@ void Player::Update() {
 		m_Pos.x += m_Speed;
 
 		m_pCollider->SetPos(m_Pos);
+
+		//‰æ–Ê’[‚Æ‚Ì”»’è
+		if ((m_Pos.x - kWidth / 2) < 0 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH) {
+			m_CurrentState = CLUSH;
+			MassageManager::GetInstance().DeadPlayer();
+		}
 	}
 	else if (m_CurrentState == CLUSH) {
 		++m_AnimFrCnt;
