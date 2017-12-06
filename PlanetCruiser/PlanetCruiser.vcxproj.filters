@@ -8,9 +8,6 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="BackGround.cpp">
-      <Filter>Scene\Main\Obj\backgroune</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Scene\Main\Obj\player</Filter>
     </ClCompile>
@@ -35,6 +32,15 @@
     <ClCompile Include="MassageManager.cpp">
       <Filter>Scene\Main\Massage</Filter>
     </ClCompile>
+    <ClCompile Include="ResultScene.cpp">
+      <Filter>Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultBackground.cpp">
+      <Filter>Scene\Result\Obj\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Scene\Main\Obj\Background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -46,9 +52,6 @@
     </ClInclude>
     <ClInclude Include="SceneBase.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="BackGround.h">
-      <Filter>Scene\Main\Obj\backgroune</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Scene\Main\Obj\player</Filter>
@@ -74,6 +77,15 @@
     <ClInclude Include="MassageManager.h">
       <Filter>Scene\Main\Massage</Filter>
     </ClInclude>
+    <ClInclude Include="ResultScene.h">
+      <Filter>Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultBackground.h">
+      <Filter>Scene\Result\Obj\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Scene\Main\Obj\Background</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -88,9 +100,6 @@
     <Filter Include="Scene\Main\Obj\player">
       <UniqueIdentifier>{60692c15-ec07-4fb3-bd1f-e98d0e3b3de0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Main\Obj\backgroune">
-      <UniqueIdentifier>{d98688aa-6d2d-4056-a6cd-692f5b0a42a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Main\Obj\Pattern">
       <UniqueIdentifier>{e80300e7-3381-4b7c-86fd-358b27876b43}</UniqueIdentifier>
     </Filter>
@@ -102,6 +111,18 @@
     </Filter>
     <Filter Include="Scene\Main\Massage">
       <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result">
+      <UniqueIdentifier>{87b469fe-3eea-4740-a861-30a5dcf967f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result\Obj">
+      <UniqueIdentifier>{218d585b-ce76-48f2-a13f-86392959b7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Obj\Background">
+      <UniqueIdentifier>{d98688aa-6d2d-4056-a6cd-692f5b0a42a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result\Obj\Background">
+      <UniqueIdentifier>{fe09c87d-452a-4fa2-8a69-2766198f941c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

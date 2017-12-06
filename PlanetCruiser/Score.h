@@ -17,6 +17,9 @@ public:
 	virtual void Draw();
 
 	void WriteCsv();
+	void SetCurrentScene(SceneManager::SCENE_ID scene) {
+		m_CurrentScene = scene;
+	}
 
 	static const int kPicWidth = 1024;
 	static const int kPicHeight = 1024;

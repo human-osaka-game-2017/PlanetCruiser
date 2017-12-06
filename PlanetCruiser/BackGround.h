@@ -1,5 +1,5 @@
-#ifndef Background_H
-#define Background_H
+#ifndef BACKGROUND_H
+#define BACKGROUND_H
 
 #include<ObjectBase.h>
 

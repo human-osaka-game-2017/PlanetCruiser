@@ -15,7 +15,7 @@ Background::~Background() {
 }
 
 void Background::Update() {
-	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
 		if (m_Pos.y >= kPicHeight) {
 			m_Pos = D3DXVECTOR3(kPicWidth / 2, 0.0f, 0.0f);
 		}

@@ -12,10 +12,11 @@ Score::Score() :
 }
 
 Score::~Score() {
-
+	delete m_pInstance;
 }
 
 void Score::Update() {
+
 	switch (m_CurrentScene) {
 	case SceneManager::SCENE_ID::MAIN:
 		MainSceneUpdate();
@@ -40,7 +41,7 @@ void Score::Draw() {
 }
 
 void Score::MainSceneUpdate() {
-	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
 		m_FrCnt++;
 		if (m_FrCnt == 30) {
 			m_Score += 10;

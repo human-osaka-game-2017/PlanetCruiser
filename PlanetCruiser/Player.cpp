@@ -42,7 +42,7 @@ void Player::Update() {
 		//‰æ–Ê’[‚Æ‚Ì”»’è
 		if ((m_Pos.x - kWidth / 2) < 0 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH) {
 			m_CurrentState = CLUSH;
-			MassageManager::GetInstance().DeadPlayer();
+			MassageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
 	else if (m_CurrentState == CLUSH) {
@@ -54,6 +54,7 @@ void Player::Update() {
 
 		if (40 <= m_CurrentAnimNo) {
 			m_CurrentState = DEAD;
+			MassageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
 }
@@ -76,6 +77,6 @@ void Player::Collision() {
 	m_WasCllided = true;
 	if (m_CurrentState == ALLIVE) {
 		m_CurrentState = CLUSH;
-		MassageManager::GetInstance().DeadPlayer();
+		MassageManager::GetInstance().SetPlayerState(m_CurrentState);
 	}
 }

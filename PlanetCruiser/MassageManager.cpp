@@ -8,4 +8,5 @@ MassageManager::MassageManager()
 
 MassageManager::~MassageManager()
 {
+	delete m_pInstance;
 }

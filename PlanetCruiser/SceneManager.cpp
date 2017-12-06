@@ -1,6 +1,7 @@
 #include"SceneManager.h"
 #include"SceneFactory.h"
 #include"MainScene.h"
+#include"Score.h"
 
 SceneManager::SceneManager() :
 	m_pScene(new MainScene)
@@ -19,5 +20,6 @@ void SceneManager::Run() {
 	if (m_CurrentSceneId != nextSceneId) {
 		delete m_pScene;
 		m_pScene = SceneFactory::GetInstance().Create(nextSceneId);
+		Score::GetInstance().SetCurrentScene(nextSceneId);
 	}
 }

@@ -6,6 +6,7 @@
 #include"Score.h"
 #include<ColliderManager.h>
 #include"Score.h"
+#include"MassageManager.h"
 
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
@@ -23,6 +24,11 @@ MainScene::MainScene() {
 }
 
 MainScene::~MainScene() {
+	Lib::GetInstance().CancelTexture("Assets\\integ.png");
+	Lib::GetInstance().CancelTexture("Assets\\Background.png");
+	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
+	Lib::GetInstance().CancelTexture("Assets\\Clush.png");
+
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
 	{
 		delete *itr;
@@ -41,6 +47,9 @@ SceneManager::SCENE_ID MainScene::Update() {
 
 	Score::GetInstance().Update();
 
+	if (MassageManager::GetInstance().GetPlayerState() == Player::STATE::DEAD) {
+		nextScene = SceneManager::SCENE_ID::RESULT;
+	}
 	return nextScene;
 }
 

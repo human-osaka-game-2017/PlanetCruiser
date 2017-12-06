@@ -27,7 +27,7 @@ EndlessSystem::~EndlessSystem() {
 }
 
 void EndlessSystem::Update() {
-	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
 		m_Pos.y += kScrollSpeed;
 
 		if (m_Pos.y > kMaxScrollY) {

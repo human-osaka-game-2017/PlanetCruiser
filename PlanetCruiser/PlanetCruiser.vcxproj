@@ -133,28 +133,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
-    <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="EndlessSystem.cpp" />
+    <ClCompile Include="ResultBackground.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MassageManager.cpp" />
     <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="PatternManager.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Score.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
-    <ClInclude Include="BackGround.h" />
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EndlessSystem.h" />
+    <ClInclude Include="ResultBackground.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MassageManager.h" />
     <ClInclude Include="Pattern.h" />
     <ClInclude Include="PatternManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ResultScene.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="SceneManager.h" />

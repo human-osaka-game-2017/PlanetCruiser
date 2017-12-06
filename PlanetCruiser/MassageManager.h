@@ -12,12 +12,12 @@ public:
 		return *m_pInstance;
 	}
 
-	void DeadPlayer() {
-		m_PlayerIsDead = true;
+	void SetPlayerState(Player::STATE state) {
+		m_PlayerState = state;
 	}
 
-	bool GetPlayerDeadFlg() {
-		return m_PlayerIsDead;
+	Player::STATE GetPlayerState() {
+		return m_PlayerState;
 	}
 
 private:
@@ -25,6 +25,6 @@ private:
 	MassageManager();
 	~MassageManager();
 
-	bool m_PlayerIsDead = false;
+	Player::STATE m_PlayerState = Player::ALLIVE;
 };
 #endif
