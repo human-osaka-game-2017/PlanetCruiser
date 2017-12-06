@@ -39,8 +39,11 @@ SceneManager::SCENE_ID ResultScene::Update() {
 		nextScene = SceneManager::SCENE_ID::MAIN;
 	}
 
+<<<<<<< HEAD
 	Score::GetInstance().Update();
 
+=======
+>>>>>>> ae9380bd51fad82e99cf9fc0d7e092df51444d53
 	return nextScene;
 }
 
