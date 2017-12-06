@@ -20,11 +20,20 @@ public:
 		return m_PlayerState;
 	}
 
+	bool GetPushSpaceKeyFlg() {
+		return m_IsPushingSpaceKey;
+	}
+
+	void SetPushSpaceKeyFlg(bool pushSpaceKeyFlg) {
+		m_IsPushingSpaceKey = pushSpaceKeyFlg;
+	}
+
 private:
 	static MassageManager* m_pInstance;
 	MassageManager();
 	~MassageManager();
 
 	Player::STATE m_PlayerState = Player::ALLIVE;
+	bool m_IsPushingSpaceKey = false;
 };
 #endif

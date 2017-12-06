@@ -1,14 +1,18 @@
 #include"ResultScene.h"
 #include<Lib.h>
 #include"ResultBackground.h"
+#include"PushSpaceKey.h"
 #include"Score.h"
 
 ResultScene::ResultScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\GameOver.png", ResultBackground::kPicWidth, ResultBackground::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\PushSpaceKey.png", PushSpaceKey::kPicWidth, PushSpaceKey::kPicHeight);
 
 	ResultBackground* pResultBackGround = new ResultBackground();
+	PushSpaceKey* pPushSpaceKey = new PushSpaceKey();
 
 	m_PtrObjects.push_back(pResultBackGround);
+	m_PtrObjects.push_back(pPushSpaceKey);
 }
 
 ResultScene::~ResultScene() {

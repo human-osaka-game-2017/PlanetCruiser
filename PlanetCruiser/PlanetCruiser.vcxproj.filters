@@ -30,7 +30,7 @@
       <Filter>Scene\Main\Obj\Score</Filter>
     </ClCompile>
     <ClCompile Include="MassageManager.cpp">
-      <Filter>Scene\Main\Massage</Filter>
+      <Filter>Massage</Filter>
     </ClCompile>
     <ClCompile Include="ResultScene.cpp">
       <Filter>Scene\Result</Filter>
@@ -40,6 +40,9 @@
     </ClCompile>
     <ClCompile Include="Background.cpp">
       <Filter>Scene\Main\Obj\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="PushSpaceKey.cpp">
+      <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +78,7 @@
       <Filter>Scene\Main\Obj\Score</Filter>
     </ClInclude>
     <ClInclude Include="MassageManager.h">
-      <Filter>Scene\Main\Massage</Filter>
+      <Filter>Massage</Filter>
     </ClInclude>
     <ClInclude Include="ResultScene.h">
       <Filter>Scene\Result</Filter>
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>Scene\Main\Obj\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="PushSpaceKey.h">
+      <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -109,9 +115,6 @@
     <Filter Include="Scene\Main\Obj\Score">
       <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Main\Massage">
-      <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Result">
       <UniqueIdentifier>{87b469fe-3eea-4740-a861-30a5dcf967f7}</UniqueIdentifier>
     </Filter>
@@ -123,6 +126,12 @@
     </Filter>
     <Filter Include="Scene\Result\Obj\Background">
       <UniqueIdentifier>{fe09c87d-452a-4fa2-8a69-2766198f941c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result\Obj\PushSpaceKey">
+      <UniqueIdentifier>{2303abb3-cf46-47e7-9feb-d46642896e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Massage">
+      <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
