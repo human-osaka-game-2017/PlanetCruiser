@@ -26,7 +26,7 @@ MainScene::MainScene() {
 MainScene::~MainScene() {
 	Lib::GetInstance().CancelTexture("Assets\\integ.png");
 	Lib::GetInstance().CancelTexture("Assets\\Background.png");
-	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
+	//Lib::GetInstance().CancelTexture("Assets\\fonts.png");
 	Lib::GetInstance().CancelTexture("Assets\\Clush.png");
 
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
