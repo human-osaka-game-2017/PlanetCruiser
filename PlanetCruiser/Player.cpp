@@ -3,6 +3,7 @@
 #include<Lib.h>
 #include<SquareCollider.h>
 #include<ColliderManager.h>
+#include"MassageManager.h"
 
 Player::Player():
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH/2.0f,700.0f))
@@ -44,6 +45,10 @@ void Player::Update() {
 			m_AnimFrCnt = 0;
 			++m_CurrentAnimNo;
 		}
+
+		if (40 <= m_CurrentAnimNo) {
+			m_CurrentState = DEAD;
+		}
 	}
 }
 
@@ -65,5 +70,6 @@ void Player::Collision() {
 	m_WasCllided = true;
 	if (m_CurrentState == ALLIVE) {
 		m_CurrentState = CLUSH;
+		MassageManager::GetInstance().DeadPlayer();
 	}
 }

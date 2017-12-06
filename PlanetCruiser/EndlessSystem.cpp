@@ -2,6 +2,7 @@
 #include"PatternManager.h"
 #include"Pattern.h"
 #include<Utility.h>
+#include"MassageManager.h"
 
 const float EndlessSystem::kScrollSpeed = 1.0f;
 const int EndlessSystem::kMaxScrollY = 1280;
@@ -26,19 +27,21 @@ EndlessSystem::~EndlessSystem() {
 }
 
 void EndlessSystem::Update() {
-	m_Pos.y += kScrollSpeed;
+	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+		m_Pos.y += kScrollSpeed;
 
-	if (m_Pos.y > kMaxScrollY) {
-		delete m_pCurrentPattern;
-		m_pCurrentPattern = m_pNextPattern;
-		PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(0, PatternManager::MAX - 1);
-		const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
-		m_pNextPattern = new Pattern(asteroidsNext);
-		m_Pos.y = 0.0f;
+		if (m_Pos.y > kMaxScrollY) {
+			delete m_pCurrentPattern;
+			m_pCurrentPattern = m_pNextPattern;
+			PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(0, PatternManager::MAX - 1);
+			const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
+			m_pNextPattern = new Pattern(asteroidsNext);
+			m_Pos.y = 0.0f;
+		}
+
+		m_pCurrentPattern->Update();
+		m_pNextPattern->Update();
 	}
-
-	m_pCurrentPattern->Update();
-	m_pNextPattern->Update();
 }
 
 void EndlessSystem::Draw() {

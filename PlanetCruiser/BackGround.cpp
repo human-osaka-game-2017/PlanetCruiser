@@ -2,6 +2,7 @@
 #include"Common.h"
 #include"EndlessSystem.h"
 #include<Lib.h>
+#include"MassageManager.h"
 
 Background::Background() :
 	ObjectBase(D3DXVECTOR2(kPicWidth/2, 0.0f))
@@ -14,11 +15,13 @@ Background::~Background() {
 }
 
 void Background::Update() {
-	if (m_Pos.y >= kPicHeight) {
-		m_Pos = D3DXVECTOR3(kPicWidth/2, 0.0f, 0.0f);
-	}
+	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+		if (m_Pos.y >= kPicHeight) {
+			m_Pos = D3DXVECTOR3(kPicWidth / 2, 0.0f, 0.0f);
+		}
 
-	m_Pos.y += EndlessSystem::kScrollSpeed;
+		m_Pos.y += EndlessSystem::kScrollSpeed;
+	}
 }
 
 void Background::Draw() {

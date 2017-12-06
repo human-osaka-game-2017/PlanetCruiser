@@ -137,6 +137,7 @@
     <ClCompile Include="EndlessSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="MassageManager.cpp" />
     <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="PatternManager.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="EndlessSystem.h" />
     <ClInclude Include="MainScene.h" />
+    <ClInclude Include="MassageManager.h" />
     <ClInclude Include="Pattern.h" />
     <ClInclude Include="PatternManager.h" />
     <ClInclude Include="Player.h" />

@@ -1,6 +1,7 @@
 #include"Score.h"
 #include"Common.h"
 #include<Lib.h>
+#include"MassageManager.h"
 
 Score* Score::m_pInstance = nullptr;
 
@@ -39,10 +40,12 @@ void Score::Draw() {
 }
 
 void Score::MainSceneUpdate() {
-	m_FrCnt++;
-	if (m_FrCnt == 30) {
-		m_Score += 10;
-		m_FrCnt = 0;
+	if (MassageManager::GetInstance().GetPlayerDeadFlg() == false) {
+		m_FrCnt++;
+		if (m_FrCnt == 30) {
+			m_Score += 10;
+			m_FrCnt = 0;
+		}
 	}
 }
 

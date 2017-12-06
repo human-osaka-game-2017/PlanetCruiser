@@ -32,6 +32,9 @@
     <ClCompile Include="Score.cpp">
       <Filter>Scene\Main\Obj\Score</Filter>
     </ClCompile>
+    <ClCompile Include="MassageManager.cpp">
+      <Filter>Scene\Main\Massage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -68,6 +71,9 @@
     <ClInclude Include="Score.h">
       <Filter>Scene\Main\Obj\Score</Filter>
     </ClInclude>
+    <ClInclude Include="MassageManager.h">
+      <Filter>Scene\Main\Massage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -93,6 +99,9 @@
     </Filter>
     <Filter Include="Scene\Main\Obj\Score">
       <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Massage">
+      <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
