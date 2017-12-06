@@ -12,6 +12,8 @@ Player::Player():
 	m_pCollider = new SquareCollider(std::string("Player"), m_Pos, std::bind(&Player::Collision, this), size);
 	ColliderManager::GetInstance().Register(m_pCollider);
 
+	MassageManager::GetInstance().SetPlayerState(ALLIVE);
+
 	m_pFont = new Font("HIT!!");
 }
 
