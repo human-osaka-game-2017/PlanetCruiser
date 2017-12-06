@@ -21,25 +21,39 @@ Player::~Player() {
 }
 
 void Player::Update() {
-	m_WasCllided = false;
-	if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
-		m_IsRight = !m_IsRight;
-	}
+	if (m_CurrentState == ALLIVE) {
+		m_WasCllided = false;
+		if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
+			m_IsRight = !m_IsRight;
+		}
 
-	if (m_IsRight) {
-		m_Speed += kAcceleration;
-	}
-	else {
-		m_Speed -= kAcceleration;
-	}
+		if (m_IsRight) {
+			m_Speed += kAcceleration;
+		}
+		else {
+			m_Speed -= kAcceleration;
+		}
 
-	m_Pos.x += m_Speed;
+		m_Pos.x += m_Speed;
 
-	m_pCollider->SetPos(m_Pos);
+		m_pCollider->SetPos(m_Pos);
+	}
+	else if (m_CurrentState == CLUSH) {
+		++m_AnimFrCnt;
+		if (m_AnimFrCnt == 2) {
+			m_AnimFrCnt = 0;
+			++m_CurrentAnimNo;
+		}
+	}
 }
 
 void Player::Draw() {
-	Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
+	if (m_CurrentState == ALLIVE) {
+		Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
+	}
+	else if (m_CurrentState == CLUSH) {
+		Lib::GetInstance().Draw(m_Pos, "Assets\\Clush.png", (float)kClushWidth, (float)kClushHeight, kClushWidth*m_CurrentAnimNo);
+	}
 
 	if (m_WasCllided) {
 		RECT rect = { 20,10,100,50 };
@@ -48,6 +62,8 @@ void Player::Draw() {
 }
 
 void Player::Collision() {
-	
 	m_WasCllided = true;
+	if (m_CurrentState == ALLIVE) {
+		m_CurrentState = CLUSH;
+	}
 }

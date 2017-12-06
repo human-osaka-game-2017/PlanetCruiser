@@ -11,14 +11,15 @@ MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\Clush.png", Player::kClushPicWidth, Player::kClushPicHeight);
 
 	ObjectBase* player = new Player;
 	ObjectBase* background = new Background;
 	ObjectBase* endlessSystem = new EndlessSystem;
 
 	m_Objects.push_back(background);
-	m_Objects.push_back(player);
 	m_Objects.push_back(endlessSystem);
+	m_Objects.push_back(player);
 }
 
 MainScene::~MainScene() {

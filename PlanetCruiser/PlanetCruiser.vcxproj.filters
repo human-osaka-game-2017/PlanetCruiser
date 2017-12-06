@@ -9,28 +9,28 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="BackGround.cpp">
-      <Filter>Obj\backgroune</Filter>
+      <Filter>Scene\Main\Obj\backgroune</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Obj\player</Filter>
+      <Filter>Scene\Main\Obj\player</Filter>
     </ClCompile>
     <ClCompile Include="MainScene.cpp">
       <Filter>Scene\Main</Filter>
     </ClCompile>
     <ClCompile Include="Asteroid.cpp">
-      <Filter>Obj\Pattern\Asteroid</Filter>
+      <Filter>Scene\Main\Obj\Pattern\Asteroid</Filter>
     </ClCompile>
     <ClCompile Include="PatternManager.cpp">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClCompile>
     <ClCompile Include="Pattern.cpp">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClCompile>
     <ClCompile Include="EndlessSystem.cpp">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClCompile>
     <ClCompile Include="Score.cpp">
-      <Filter>Obj\Score</Filter>
+      <Filter>Scene\Main\Obj\Score</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -45,53 +45,53 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="BackGround.h">
-      <Filter>Obj\backgroune</Filter>
+      <Filter>Scene\Main\Obj\backgroune</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Obj\player</Filter>
+      <Filter>Scene\Main\Obj\player</Filter>
     </ClInclude>
     <ClInclude Include="MainScene.h">
       <Filter>Scene\Main</Filter>
     </ClInclude>
     <ClInclude Include="Asteroid.h">
-      <Filter>Obj\Pattern\Asteroid</Filter>
+      <Filter>Scene\Main\Obj\Pattern\Asteroid</Filter>
     </ClInclude>
     <ClInclude Include="PatternManager.h">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="Pattern.h">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="EndlessSystem.h">
-      <Filter>Obj\Pattern</Filter>
+      <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="Score.h">
-      <Filter>Obj\Score</Filter>
+      <Filter>Scene\Main\Obj\Score</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
       <UniqueIdentifier>{4dd273ad-254a-4a39-b5bf-cb2d7c7893d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obj">
-      <UniqueIdentifier>{5cc0c244-b26b-4b72-9060-67fae1f078d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Obj\player">
-      <UniqueIdentifier>{60692c15-ec07-4fb3-bd1f-e98d0e3b3de0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Obj\backgroune">
-      <UniqueIdentifier>{d98688aa-6d2d-4056-a6cd-692f5b0a42a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Main">
       <UniqueIdentifier>{5df4e1c1-2c2f-4e81-8dc3-a8e8d597c7ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obj\Pattern">
+    <Filter Include="Scene\Main\Obj">
+      <UniqueIdentifier>{5cc0c244-b26b-4b72-9060-67fae1f078d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Obj\player">
+      <UniqueIdentifier>{60692c15-ec07-4fb3-bd1f-e98d0e3b3de0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Obj\backgroune">
+      <UniqueIdentifier>{d98688aa-6d2d-4056-a6cd-692f5b0a42a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Obj\Pattern">
       <UniqueIdentifier>{e80300e7-3381-4b7c-86fd-358b27876b43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obj\Pattern\Asteroid">
+    <Filter Include="Scene\Main\Obj\Pattern\Asteroid">
       <UniqueIdentifier>{330bc8de-f1fc-4c3a-8e8e-868b9e21c5c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obj\Score">
+    <Filter Include="Scene\Main\Obj\Score">
       <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
