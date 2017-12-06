@@ -3,6 +3,7 @@
 #include"ResultBackground.h"
 #include"PushSpaceKey.h"
 #include"Score.h"
+#include"MassageManager.h"
 
 ResultScene::ResultScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\GameOver.png", ResultBackground::kPicWidth, ResultBackground::kPicHeight);
@@ -16,7 +17,13 @@ ResultScene::ResultScene() {
 }
 
 ResultScene::~ResultScene() {
+	Lib::GetInstance().CancelTexture("Assets\\GameOver.png");
+	Lib::GetInstance().CancelTexture("Assets\\PushSpaceKey.png");
 
+	for (auto itr = m_PtrObjects.begin(); itr != m_PtrObjects.end(); itr++)
+	{
+		delete *itr;
+	}
 }
 
 SceneManager::SCENE_ID ResultScene::Update() {
@@ -26,6 +33,13 @@ SceneManager::SCENE_ID ResultScene::Update() {
 	{
 		(*itr)->Update();
 	}
+
+	if (MassageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
+		MassageManager::GetInstance().SetPushSpaceKeyFlg(false);
+		nextScene = SceneManager::SCENE_ID::MAIN;
+	}
+
+	Score::GetInstance().Update();
 
 	return nextScene;
 }
