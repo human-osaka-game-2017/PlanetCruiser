@@ -16,7 +16,6 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-	void WriteCsv();
 	void SetCurrentScene(SceneManager::SCENE_ID scene) {
 		m_CurrentScene = scene;
 	}
@@ -30,13 +29,18 @@ private:
 	virtual ~Score();
 
 	unsigned int m_Score = 0;
+	unsigned int m_HighScore = 0;
 	unsigned int m_FrCnt = 0;
 	SceneManager::SCENE_ID m_CurrentScene = SceneManager::SCENE_ID::MAIN;
+	bool isNewRecord = false;
 	
 	void MainSceneUpdate();
 	void MainSceneDraw();
 	void ResultSceneUpdate();
 	void ResultSceneDraw();
+	void WriteScore();
+	//high score更新してたらWriteScoreを呼び出し、リセットするところまでやっている
+	void CompareCurrentScoreWithHighScore();
 
 	static const int kWidth = 24;
 	static const int kHeight = 32;

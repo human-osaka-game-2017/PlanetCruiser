@@ -2,13 +2,16 @@
 #include"Common.h"
 #include<Lib.h>
 #include"MassageManager.h"
+#include<fstream>
+//#include<iostream>
 
 Score* Score::m_pInstance = nullptr;
 
 Score::Score() :
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH - (kWidth), WINDOW_HEIGHT - (kHeight)))
 {
-
+	std::ifstream ifs("Assets\\highScore.txt");
+	ifs >> m_HighScore;
 }
 
 Score::~Score() {
@@ -16,6 +19,16 @@ Score::~Score() {
 }
 
 void Score::Update() {
+
+	static  SceneManager::SCENE_ID prevScene = SceneManager::SCENE_ID::MAIN;
+
+	if (prevScene == SceneManager::SCENE_ID::MAIN&&m_CurrentScene == SceneManager::SCENE_ID::RESULT) {
+		CompareCurrentScoreWithHighScore();
+		m_Score = 0;
+		m_FrCnt = 0;
+	}
+
+	prevScene = m_CurrentScene;
 
 	switch (m_CurrentScene) {
 	case SceneManager::SCENE_ID::MAIN:
@@ -78,7 +91,7 @@ void Score::MainSceneDraw() {
 				{ -kWidth / 2 + pos.x,kHeight / 2 + pos.y,0.5f,1.0f,0xffffffff,0.0f,1.0f }
 			};
 
-			Lib::GetInstance().TrimingVertex(vertex, 108 * spacingCnt, 144 * 4, 108, 144, kPicWidth, kPicHeight);
+			Lib::GetInstance().TrimingVertex(vertex, (float)108 * spacingCnt, (float)144 * 4, (float)108, (float)144, (float)kPicWidth, (float)kPicHeight);
 
 			Lib::GetInstance().Draw(vertex, "Assets\\fonts.png");
 		}
@@ -91,4 +104,19 @@ void Score::ResultSceneUpdate() {
 
 void Score::ResultSceneDraw() {
 
+}
+
+void Score::WriteScore() {
+	std::ofstream outputfile("Assets\\highScore.txt");
+	outputfile << m_Score;
+	outputfile.close();
+}
+
+void Score::CompareCurrentScoreWithHighScore() {
+	
+
+	if (m_HighScore < m_Score) {
+		WriteScore();
+		m_HighScore = m_Score;
+	}
 }
