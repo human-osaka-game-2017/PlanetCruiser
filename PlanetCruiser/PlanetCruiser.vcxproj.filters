@@ -27,7 +27,7 @@
       <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClCompile>
     <ClCompile Include="Score.cpp">
-      <Filter>Scene\Main\Obj\Score</Filter>
+      <Filter>Score</Filter>
     </ClCompile>
     <ClCompile Include="MassageManager.cpp">
       <Filter>Massage</Filter>
@@ -43,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="PushSpaceKey.cpp">
       <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreUp.cpp">
+      <Filter>Scene\Main\Obj\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +78,7 @@
       <Filter>Scene\Main\Obj\Pattern</Filter>
     </ClInclude>
     <ClInclude Include="Score.h">
-      <Filter>Scene\Main\Obj\Score</Filter>
+      <Filter>Score</Filter>
     </ClInclude>
     <ClInclude Include="MassageManager.h">
       <Filter>Massage</Filter>
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="PushSpaceKey.h">
       <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreUp.h">
+      <Filter>Scene\Main\Obj\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +118,6 @@
     <Filter Include="Scene\Main\Obj\Pattern\Asteroid">
       <UniqueIdentifier>{330bc8de-f1fc-4c3a-8e8e-868b9e21c5c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Main\Obj\Score">
-      <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Result">
       <UniqueIdentifier>{87b469fe-3eea-4740-a861-30a5dcf967f7}</UniqueIdentifier>
     </Filter>
@@ -132,6 +135,12 @@
     </Filter>
     <Filter Include="Massage">
       <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Main\Obj\Item">
+      <UniqueIdentifier>{2fab3eea-92b4-4ed2-8abd-eb65194c3b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Score">
+      <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
