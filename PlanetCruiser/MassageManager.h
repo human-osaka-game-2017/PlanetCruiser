@@ -28,6 +28,14 @@ public:
 		m_IsPushingSpaceKey = pushSpaceKeyFlg;
 	}
 
+	float GetScrollAcceleration() {
+		return m_ScrollAcceleration;
+	}
+
+	void SetScrollAcceleration(float a) {
+		m_ScrollAcceleration = a;
+	}
+
 private:
 	static MassageManager* m_pInstance;
 	MassageManager();
@@ -35,5 +43,6 @@ private:
 
 	Player::STATE m_PlayerState = Player::ALLIVE;
 	bool m_IsPushingSpaceKey = false;
+	float m_ScrollAcceleration = 0;
 };
 #endif

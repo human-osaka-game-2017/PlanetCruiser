@@ -9,7 +9,15 @@ class PatternManager {
 public:
 	enum PATTERN_KIND {
 		PATTERN_0,
-		//PATTERN_1,
+		PATTERN_1,
+		PATTERN_2,
+		PATTERN_3,
+		PATTERN_4,
+		PATTERN_5,
+		PATTERN_6,
+		PATTERN_7,
+		PATTERN_8,
+		PATTERN_9,
 		MAX
 	};
 

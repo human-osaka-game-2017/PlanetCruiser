@@ -22,5 +22,15 @@ private:
 	Pattern* m_pNextPattern = nullptr;
 
 	PatternManager* m_pPatternManager = nullptr;
+
+	float m_ScrollAcceleration = 0;
+	int m_ScrollFrCnt = 0;
+
+	//easyタグを読み込んだ回数
+	int m_EasyCnt = 0;
+	//easyタグを読み込むべき回数
+	int m_EasyNum = 0;
+
+	void CreatePattern();
 };
 #endif

@@ -20,7 +20,7 @@ void Background::Update() {
 			m_Pos = D3DXVECTOR3(kPicWidth / 2, 0.0f, 0.0f);
 		}
 
-		m_Pos.y += EndlessSystem::kScrollSpeed;
+		m_Pos.y += EndlessSystem::kScrollSpeed + MassageManager::GetInstance().GetScrollAcceleration();
 	}
 }
 
