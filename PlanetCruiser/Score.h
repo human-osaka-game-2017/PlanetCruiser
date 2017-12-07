@@ -29,6 +29,8 @@ private:
 	virtual ~Score();
 
 	unsigned int m_Score = 0;
+	unsigned int m_AdditionalScore = 10;
+	unsigned int m_ScoreThresholdCnt = 1;
 	unsigned int m_HighScore = 0;
 	unsigned int m_FrCnt = 0;
 	SceneManager::SCENE_ID m_CurrentScene = SceneManager::SCENE_ID::MAIN;

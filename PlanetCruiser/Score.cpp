@@ -3,7 +3,6 @@
 #include<Lib.h>
 #include"MassageManager.h"
 #include<fstream>
-//#include<iostream>
 
 Score* Score::m_pInstance = nullptr;
 
@@ -26,7 +25,10 @@ void Score::Update() {
 	}
 	if (prevScene == SceneManager::SCENE_ID::RESULT&&m_CurrentScene == SceneManager::SCENE_ID::MAIN) {
 		m_Score = 0;
+		m_AdditionalScore = 10;
 		m_FrCnt = 0;
+		m_ScoreThresholdCnt = 1;
+		isNewRecord = false;
 	}
 
 	prevScene = m_CurrentScene;
@@ -58,9 +60,14 @@ void Score::MainSceneUpdate() {
 	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
 		m_FrCnt++;
 		if (m_FrCnt == 30) {
-			m_Score += 10;
+			m_Score += m_AdditionalScore;
 			m_FrCnt = 0;
 		}
+	}
+
+	if (m_ScoreThresholdCnt == m_Score / 1000) {
+		m_ScoreThresholdCnt++;
+		m_AdditionalScore += 10;
 	}
 }
 
@@ -182,5 +189,6 @@ void Score::CompareCurrentScoreWithHighScore() {
 	if (m_HighScore < m_Score) {
 		WriteScore();
 		m_HighScore = m_Score;
+		isNewRecord = true;
 	}
 }
