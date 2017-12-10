@@ -9,7 +9,7 @@ Score* Score::m_pInstance = nullptr;
 Score::Score() :
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH - (kWidth), WINDOW_HEIGHT - (kHeight)))
 {
-	std::ifstream ifs("Assets\\highScore.txt");
+	std::ifstream ifs("Stage\\highScore.txt");
 	ifs >> m_HighScore;
 }
 
@@ -180,7 +180,7 @@ void Score::ResultSceneDraw() {
 }
 
 void Score::WriteScore() {
-	std::ofstream outputfile("Assets\\highScore.txt");
+	std::ofstream outputfile("Stage\\highScore.txt");
 	outputfile << m_Score;
 	outputfile.close();
 }

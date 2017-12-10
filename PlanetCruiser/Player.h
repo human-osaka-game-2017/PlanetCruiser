@@ -32,7 +32,6 @@ private:
 	SquareCollider* m_pDownCollider;
 	D3DXVECTOR3 m_UpCollidePos;
 	D3DXVECTOR3 m_DownCollidePos;
-	Font* m_pFont;
 	float m_Speed = 0.15f;
 	unsigned int m_AnimFrCnt = 0;
 	unsigned int m_CurrentAnimNo = 0;
@@ -41,6 +40,8 @@ private:
 	STATE m_CurrentState = ALLIVE;
 
 	void Collision();
+	void UpCollision();
+	void DownCollision();
 
 	const float kAcceleration = 0.07f; //‰Á‘¬“x
 	const int kWidth =	72;

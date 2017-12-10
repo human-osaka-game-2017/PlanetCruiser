@@ -4,16 +4,16 @@
 
 PatternManager::PatternManager() {
 	InitUVData();
-	LoadIniFile(".\\Assets\\pattern0.ini", &m_pPatterns[PATTERN_0]);
-	LoadIniFile(".\\Assets\\pattern1.ini", &m_pPatterns[PATTERN_1]);
-	LoadIniFile(".\\Assets\\pattern2.ini", &m_pPatterns[PATTERN_2]);
-	LoadIniFile(".\\Assets\\pattern3.ini", &m_pPatterns[PATTERN_3]);
-	LoadIniFile(".\\Assets\\pattern4.ini", &m_pPatterns[PATTERN_4]);
-	LoadIniFile(".\\Assets\\pattern5.ini", &m_pPatterns[PATTERN_5]);
-	LoadIniFile(".\\Assets\\pattern6.ini", &m_pPatterns[PATTERN_6]);
-	LoadIniFile(".\\Assets\\pattern7.ini", &m_pPatterns[PATTERN_7]);
-	LoadIniFile(".\\Assets\\pattern8.ini", &m_pPatterns[PATTERN_8]);
-	LoadIniFile(".\\Assets\\pattern9.ini", &m_pPatterns[PATTERN_9]);
+	LoadIniFile(".\\Stage\\pattern0.ini", &m_pPatterns[PATTERN_0]);
+	LoadIniFile(".\\Stage\\pattern1.ini", &m_pPatterns[PATTERN_1]);
+	LoadIniFile(".\\Stage\\pattern2.ini", &m_pPatterns[PATTERN_2]);
+	LoadIniFile(".\\Stage\\pattern3.ini", &m_pPatterns[PATTERN_3]);
+	LoadIniFile(".\\Stage\\pattern4.ini", &m_pPatterns[PATTERN_4]);
+	LoadIniFile(".\\Stage\\pattern5.ini", &m_pPatterns[PATTERN_5]);
+	LoadIniFile(".\\Stage\\pattern6.ini", &m_pPatterns[PATTERN_6]);
+	LoadIniFile(".\\Stage\\pattern7.ini", &m_pPatterns[PATTERN_7]);
+	LoadIniFile(".\\Stage\\pattern8.ini", &m_pPatterns[PATTERN_8]);
+	LoadIniFile(".\\Stage\\pattern9.ini", &m_pPatterns[PATTERN_9]);
 }
 
 PatternManager::~PatternManager() {

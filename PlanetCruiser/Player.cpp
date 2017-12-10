@@ -10,17 +10,15 @@ Player::Player():
 {
 	SquareCollider::Size upSize{ kUpCollideWidth,kUpCollideHeight };
 	m_UpCollidePos = m_Pos - D3DXVECTOR3(0.0f, 24.0f,0.0f);
-	m_pUpCollider = new SquareCollider(std::string("Player"), m_UpCollidePos, std::bind(&Player::Collision, this), upSize);
+	m_pUpCollider = new SquareCollider(std::string("Player"), m_UpCollidePos, std::bind(&Player::UpCollision, this), upSize);
 	ColliderManager::GetInstance().Register(m_pUpCollider);
 	
 	SquareCollider::Size downSize{ kDownCollideWidth,kDownCollideHeight };
 	m_DownCollidePos = m_Pos + D3DXVECTOR3(0.0f, 26.0f, 0.0f);
-	m_pDownCollider = new SquareCollider(std::string("Player"), m_DownCollidePos, std::bind(&Player::Collision, this), downSize);
+	m_pDownCollider = new SquareCollider(std::string("Player"), m_DownCollidePos, std::bind(&Player::DownCollision, this), downSize);
 	ColliderManager::GetInstance().Register(m_pDownCollider);
 
 	MassageManager::GetInstance().SetPlayerState(ALLIVE);
-
-	m_pFont = new Font("HIT!!");
 }
 
 Player::~Player() {
@@ -28,7 +26,6 @@ Player::~Player() {
 	delete m_pUpCollider;
 	ColliderManager::GetInstance().Cancel(m_pDownCollider);
 	delete m_pDownCollider;
-	delete m_pFont;
 }
 
 void Player::Update() {
@@ -79,17 +76,35 @@ void Player::Draw() {
 	else if (m_CurrentState == CLUSH) {
 		Lib::GetInstance().Draw(m_Pos, "Assets\\Clush.png", (float)kClushWidth, (float)kClushHeight, kClushWidth*m_CurrentAnimNo);
 	}
-
-	if (m_WasCllided) {
-		RECT rect = { 20,10,100,50 };
-		m_pFont->DrawInDisplay(rect);
-	}
 }
 
 void Player::Collision() {
-	m_WasCllided = true;
 	if (m_CurrentState == ALLIVE) {
 		m_CurrentState = CLUSH;
 		MassageManager::GetInstance().SetPlayerState(m_CurrentState);
+	}
+}
+
+void Player::UpCollision() {
+	for (auto itr = m_pUpCollider->GetCollidedClassNames().begin(); itr != m_pUpCollider->GetCollidedClassNames().end(); ++itr) {
+		if ((*itr) == "Asteroid") {
+			m_WasCllided = true;
+		}
+	}
+
+	if (m_WasCllided) {
+		Collision();
+	}
+}
+
+void Player::DownCollision() {
+	for (auto itr = m_pDownCollider->GetCollidedClassNames().begin(); itr != m_pDownCollider->GetCollidedClassNames().end(); ++itr) {
+		if ((*itr) == "Asteroid") {
+			m_WasCllided = true;
+		}
+	}
+
+	if (m_WasCllided) {
+		Collision();
 	}
 }
