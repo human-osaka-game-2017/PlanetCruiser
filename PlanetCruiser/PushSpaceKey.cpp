@@ -3,7 +3,7 @@
 #include"MassageManager.h"
 
 PushSpaceKey::PushSpaceKey():
-	ObjectBase(D3DXVECTOR2(200,600))
+	ObjectBase(D3DXVECTOR2(270,700))
 {
 }
 
