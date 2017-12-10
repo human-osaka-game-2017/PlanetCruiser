@@ -8,9 +8,15 @@
 Player::Player():
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH/2.0f,700.0f))
 {
-	SquareCollider::Size size{ kCollideWidth,kCollideHeight };
-	m_pCollider = new SquareCollider(std::string("Player"), m_Pos, std::bind(&Player::Collision, this), size);
-	ColliderManager::GetInstance().Register(m_pCollider);
+	SquareCollider::Size upSize{ kUpCollideWidth,kUpCollideHeight };
+	m_UpCollidePos = m_Pos - D3DXVECTOR3(0.0f, 24.0f,0.0f);
+	m_pUpCollider = new SquareCollider(std::string("Player"), m_UpCollidePos, std::bind(&Player::Collision, this), upSize);
+	ColliderManager::GetInstance().Register(m_pUpCollider);
+	
+	SquareCollider::Size downSize{ kDownCollideWidth,kDownCollideHeight };
+	m_DownCollidePos = m_Pos + D3DXVECTOR3(0.0f, 26.0f, 0.0f);
+	m_pDownCollider = new SquareCollider(std::string("Player"), m_DownCollidePos, std::bind(&Player::Collision, this), downSize);
+	ColliderManager::GetInstance().Register(m_pDownCollider);
 
 	MassageManager::GetInstance().SetPlayerState(ALLIVE);
 
@@ -18,8 +24,10 @@ Player::Player():
 }
 
 Player::~Player() {
-	ColliderManager::GetInstance().Cancel(m_pCollider);
-	delete m_pCollider;
+	ColliderManager::GetInstance().Cancel(m_pUpCollider);
+	delete m_pUpCollider;
+	ColliderManager::GetInstance().Cancel(m_pDownCollider);
+	delete m_pDownCollider;
 	delete m_pFont;
 }
 
@@ -38,8 +46,11 @@ void Player::Update() {
 		}
 
 		m_Pos.x += m_Speed;
+		m_UpCollidePos.x += m_Speed;
+		m_DownCollidePos.x+= m_Speed;
 
-		m_pCollider->SetPos(m_Pos);
+		m_pUpCollider->SetPos(m_UpCollidePos);
+		m_pDownCollider->SetPos(m_DownCollidePos);
 
 		//‰æ–Ê’[‚Æ‚Ì”»’è
 		if ((m_Pos.x - kWidth / 2) < 0 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH) {

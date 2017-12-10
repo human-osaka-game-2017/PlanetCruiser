@@ -113,7 +113,7 @@ void Score::ResultSceneUpdate() {
 void Score::ResultSceneDraw() {
 
 	//前回のスコア表示
-	D3DXVECTOR2 pos(300,400);
+	D3DXVECTOR2 pos(440,400);
 
 	for (int i = 0; i < kMaxNumberOfDigits; ++i) {
 
@@ -146,7 +146,7 @@ void Score::ResultSceneDraw() {
 	}
 
 	//ハイスコア表示
-	pos = D3DXVECTOR2(300, 600);
+	pos = D3DXVECTOR2(440, 600);
 
 	for (int i = 0; i < kMaxNumberOfDigits; ++i) {
 

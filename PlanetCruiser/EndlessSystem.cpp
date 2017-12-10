@@ -87,7 +87,7 @@ void EndlessSystem::CreatePattern() {
 			m_EasyNum = 3;
 		}
 
-		PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(7, 10);
+		PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(7, 9);
 		const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
 		m_pNextPattern = new Pattern(asteroidsNext);
 	}
@@ -97,6 +97,4 @@ void EndlessSystem::CreatePattern() {
 		const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
 		m_pNextPattern = new Pattern(asteroidsNext);
 	}
-
-	
 }

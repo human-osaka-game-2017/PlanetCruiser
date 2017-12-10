@@ -28,7 +28,10 @@ public:
 	static const int kClushPicHeight = 128;
 
 private:
-	SquareCollider* m_pCollider;
+	SquareCollider* m_pUpCollider;
+	SquareCollider* m_pDownCollider;
+	D3DXVECTOR3 m_UpCollidePos;
+	D3DXVECTOR3 m_DownCollidePos;
 	Font* m_pFont;
 	float m_Speed = 0.15f;
 	unsigned int m_AnimFrCnt = 0;
@@ -44,7 +47,9 @@ private:
 	const int kHeight = 110;
 	const int kClushWidth = 128;
 	const int kClushHeight = 128;
-	const int kCollideWidth = 72;
-	const int kCollideHeight = 110;
+	const int kUpCollideWidth = 36;
+	const int kUpCollideHeight = 62;
+	const int kDownCollideWidth = 64;
+	const int kDownCollideHeight = 38;
 };
 #endif

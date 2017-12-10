@@ -32,9 +32,10 @@ public:
 
 private:
 	AsteroidIniData m_AsteroidData;
-	const int kSwitchPoint = -100;
 	SquareCollider* m_pCollider;
 
 	void Collision();
+
+	const int kSwitchPoint = -100;
 };
 #endif

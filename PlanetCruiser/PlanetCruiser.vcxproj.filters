@@ -47,6 +47,9 @@
     <ClCompile Include="ScoreUp.cpp">
       <Filter>Scene\Main\Obj\Item</Filter>
     </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
+      <Filter>Scene\Main\Obj\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -96,6 +99,9 @@
       <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
     </ClInclude>
     <ClInclude Include="ScoreUp.h">
+      <Filter>Scene\Main\Obj\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
       <Filter>Scene\Main\Obj\Item</Filter>
     </ClInclude>
   </ItemGroup>

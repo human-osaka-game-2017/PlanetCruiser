@@ -11,8 +11,16 @@ Asteroid::Asteroid(const AsteroidIniData& astData) :
 {
 	m_Pos.y -= EndlessSystem::kMaxScrollY;
 
+	D3DXVECTOR3 collidePos = m_Pos;
+
 	SquareCollider::Size size{ m_AsteroidData.collidedWidth,m_AsteroidData.collidedHeight };
-	m_pCollider = new SquareCollider(std::string("Asteroid"), m_Pos, std::bind(&Asteroid::Collision, this), size);
+
+	//—áŠOˆ—
+	if (size.width == 104) {
+		collidePos.y -= 4.0f;
+	}
+
+	m_pCollider = new SquareCollider(std::string("Asteroid"), collidePos, std::bind(&Asteroid::Collision, this), size);
 	ColliderManager::GetInstance().Register(m_pCollider);
 }
 
@@ -29,7 +37,14 @@ void Asteroid::Update() {
 		m_Pos.y += m_AsteroidData.speed + MassageManager::GetInstance().GetScrollAcceleration();
 	}
 
-	m_pCollider->SetPos(m_Pos);
+	D3DXVECTOR3 collidePos = m_Pos;
+
+	//—áŠOˆ—
+	if (m_AsteroidData.collidedWidth == 104) {
+		collidePos.y -= 4.0f;
+	}
+
+	m_pCollider->SetPos(collidePos);
 }
 
 void Asteroid::Draw() {

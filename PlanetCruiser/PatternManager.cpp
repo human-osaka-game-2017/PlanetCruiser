@@ -26,11 +26,11 @@ PatternManager::~PatternManager() {
 }
 
 void PatternManager::InitUVData() {
-	UV tmpNormal = { 0.0f,120.0f,140.0f,140.0f, 140.0f, 140.0f };
+	UV tmpNormal = { 0.0f,120.0f,140.0f,140.0f, 124.0f, 124.0f };
 	m_UVData["NORMAL"] = tmpNormal;
-	UV tmpWide = { 140.0f,120.0f,250.0f,120.0f,250.0f,120.0f };
+	UV tmpWide = { 140.0f,120.0f,250.0f,120.0f,234.0f,100.0f };
 	m_UVData["WIDE"] = tmpWide;
-	UV tmpSlender = { 390.0f,120.0f ,110.0f,220.0f,110.0f,220.0f };
+	UV tmpSlender = { 390.0f,120.0f ,110.0f,220.0f,104.0f,200.0f };
 	m_UVData["SLENDER"] = tmpSlender;
 }
 

@@ -20,6 +20,10 @@ public:
 		m_CurrentScene = scene;
 	}
 
+	void AddScore(unsigned int val) {
+		m_Score += val;
+	}
+
 	static const int kPicWidth = 1024;
 	static const int kPicHeight = 1024;
 
