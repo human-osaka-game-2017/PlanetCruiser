@@ -50,7 +50,7 @@ void Player::Update() {
 		m_pDownCollider->SetPos(m_DownCollidePos);
 
 		//‰æ–Ê’[‚Æ‚Ì”»’è
-		if ((m_Pos.x - kWidth / 2) < 0 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH) {
+		if ((m_Pos.x - kWidth / 2) < -12 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH + 12) {
 			m_CurrentState = CLUSH;
 			MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
