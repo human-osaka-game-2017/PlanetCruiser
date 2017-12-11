@@ -24,6 +24,10 @@ public:
 		m_Score += val;
 	}
 
+	int GetScore() {
+		return m_Score;
+	}
+
 	static const int kPicWidth = 1024;
 	static const int kPicHeight = 1024;
 

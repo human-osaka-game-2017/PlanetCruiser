@@ -11,7 +11,7 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-	static const int kPicWidth = 550;
+	static const int kPicWidth = 512;
 	static const int kPicHeight = 1024;
 
 private:

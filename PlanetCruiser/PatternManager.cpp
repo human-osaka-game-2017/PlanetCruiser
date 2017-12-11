@@ -14,6 +14,7 @@ PatternManager::PatternManager() {
 	LoadIniFile(".\\Stage\\pattern7.ini", &m_pPatterns[PATTERN_7]);
 	LoadIniFile(".\\Stage\\pattern8.ini", &m_pPatterns[PATTERN_8]);
 	LoadIniFile(".\\Stage\\pattern9.ini", &m_pPatterns[PATTERN_9]);
+	LoadIniFile(".\\Stage\\pattern10.ini", &m_pPatterns[PATTERN_10]);
 }
 
 PatternManager::~PatternManager() {

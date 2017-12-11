@@ -42,13 +42,19 @@
       <Filter>Scene\Main\Obj\Background</Filter>
     </ClCompile>
     <ClCompile Include="PushSpaceKey.cpp">
-      <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
+      <Filter>Scene\Title\PushSpaceKey</Filter>
     </ClCompile>
     <ClCompile Include="ScoreUp.cpp">
       <Filter>Scene\Main\Obj\Item</Filter>
     </ClCompile>
     <ClCompile Include="ItemManager.cpp">
       <Filter>Scene\Main\Obj\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleBackground.cpp">
+      <Filter>Scene\Title\Obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,13 +102,19 @@
       <Filter>Scene\Main\Obj\Background</Filter>
     </ClInclude>
     <ClInclude Include="PushSpaceKey.h">
-      <Filter>Scene\Result\Obj\PushSpaceKey</Filter>
+      <Filter>Scene\Title\PushSpaceKey</Filter>
     </ClInclude>
     <ClInclude Include="ScoreUp.h">
       <Filter>Scene\Main\Obj\Item</Filter>
     </ClInclude>
     <ClInclude Include="ItemManager.h">
       <Filter>Scene\Main\Obj\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleBackground.h">
+      <Filter>Scene\Title\Obj</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -136,9 +148,6 @@
     <Filter Include="Scene\Result\Obj\Background">
       <UniqueIdentifier>{fe09c87d-452a-4fa2-8a69-2766198f941c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Result\Obj\PushSpaceKey">
-      <UniqueIdentifier>{2303abb3-cf46-47e7-9feb-d46642896e79}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Massage">
       <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
     </Filter>
@@ -147,6 +156,15 @@
     </Filter>
     <Filter Include="Score">
       <UniqueIdentifier>{a0e597a4-8f30-4b89-a90d-3611f8c2ae10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{8ddc31a6-4e32-4468-a9f5-b10f9a5d49f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title\Obj">
+      <UniqueIdentifier>{091a9acb-0f28-4c88-a5cd-b0e62e5abf47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title\PushSpaceKey">
+      <UniqueIdentifier>{2303abb3-cf46-47e7-9feb-d46642896e79}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

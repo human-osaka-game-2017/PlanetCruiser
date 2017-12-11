@@ -33,6 +33,7 @@ MainScene::~MainScene() {
 	Lib::GetInstance().CancelTexture("Assets\\Background.png");
 	Lib::GetInstance().CancelTexture("Assets\\Clush.png");
 	Lib::GetInstance().CancelTexture("Assets\\ScoreUp.png");
+	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
 
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
 	{

@@ -62,7 +62,8 @@ void ScoreUp::Collision() {
 	for (auto itr = m_pCollider->GetCollidedClassNames().begin(); itr != m_pCollider->GetCollidedClassNames().end(); ++itr) {
 		if ((*itr) == std::string("Player")) {
 			m_WasTaken = true;
-			Score::GetInstance().AddScore(100);
+			int additionalPoint = (((Score::GetInstance().GetScore() / 4) / 10) * 10);
+			Score::GetInstance().AddScore(additionalPoint);
 			break;
 		}
 	}

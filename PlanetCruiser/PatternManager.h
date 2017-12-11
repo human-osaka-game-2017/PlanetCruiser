@@ -18,6 +18,7 @@ public:
 		PATTERN_7,
 		PATTERN_8,
 		PATTERN_9,
+		PATTERN_10,
 		MAX
 	};
 

@@ -2,8 +2,9 @@
 #include<Lib.h>
 #include"MassageManager.h"
 
-PushSpaceKey::PushSpaceKey():
-	ObjectBase(D3DXVECTOR2(270,700))
+PushSpaceKey::PushSpaceKey(bool currentSceneIsTitle):
+	ObjectBase(D3DXVECTOR2(270,700)),
+	m_CurrentSceneIsTitle(currentSceneIsTitle)
 {
 }
 
@@ -34,5 +35,10 @@ void PushSpaceKey::Draw() {
 
 	DWORD color = D3DCOLOR_RGBA(255, 255, 255, alpha);
 
-	Lib::GetInstance().Draw(m_Pos, "Assets\\PushSpaceKey.png", (float)kPicWidth, (float)kPicHeight, 0.0f, 0.0f, 0.0f, 1.0f, color);
+	if (m_CurrentSceneIsTitle) {
+		Lib::GetInstance().Draw(m_Pos, "Assets\\sPushSpaceKey.png", (float)kPicWidth, (float)kPicHeight, 0.0f, 0.0f, 0.0f, 1.0f, color);
+	}
+	else {
+		Lib::GetInstance().Draw(m_Pos, "Assets\\rPushSpaceKey.png", (float)kPicWidth, (float)kPicHeight, 0.0f, 0.0f, 0.0f, 1.0f, color);
+	}
 }

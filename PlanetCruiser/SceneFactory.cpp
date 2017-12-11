@@ -2,6 +2,7 @@
 #include"SceneBase.h"
 #include"MainScene.h"
 #include"ResultScene.h"
+#include"TitleScene.h"
 
 SceneFactory* SceneFactory::m_pInstance = nullptr;
 
@@ -23,6 +24,10 @@ SceneBase* SceneFactory::Create(SceneManager::SCENE_ID scene_id) {
 
 	case SceneManager::SCENE_ID::RESULT:
 		pScene = new ResultScene();
+		break;
+
+	case SceneManager::SCENE_ID::TITLE:
+		pScene = new TitleScene();
 		break;
 	}
 

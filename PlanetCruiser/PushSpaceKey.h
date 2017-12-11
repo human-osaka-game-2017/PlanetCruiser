@@ -2,9 +2,10 @@
 #define PUSHSPACEKEY_H
 
 #include<ObjectBase.h>
+
 class PushSpaceKey :public ObjectBase{
 public:
-	PushSpaceKey();
+	PushSpaceKey(bool currentSceneIsTitle);
 	virtual ~PushSpaceKey();
 
 	virtual void Update();
@@ -16,5 +17,7 @@ private:
 	int m_AlphaFrCnt = 0;
 
 	const int kMaxAlphaFrCnt = 180;
+
+	bool m_CurrentSceneIsTitle;
 };
 #endif

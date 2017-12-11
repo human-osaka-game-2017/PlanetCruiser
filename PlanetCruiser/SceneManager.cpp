@@ -1,12 +1,11 @@
 #include"SceneManager.h"
 #include"SceneFactory.h"
-#include"MainScene.h"
+#include"TitleScene.h"
 #include"Score.h"
 
 SceneManager::SceneManager() :
-	m_pScene(new MainScene)
+	m_pScene(new TitleScene)
 {
-
 }
 
 SceneManager::~SceneManager() {

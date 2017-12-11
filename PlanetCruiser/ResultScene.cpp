@@ -7,10 +7,11 @@
 
 ResultScene::ResultScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\GameOver.png", ResultBackground::kPicWidth, ResultBackground::kPicHeight);
-	Lib::GetInstance().LoadPictureFile("Assets\\PushSpaceKey.png", PushSpaceKey::kPicWidth, PushSpaceKey::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\rPushSpaceKey.png", PushSpaceKey::kPicWidth, PushSpaceKey::kPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
 
 	ResultBackground* pResultBackGround = new ResultBackground();
-	PushSpaceKey* pPushSpaceKey = new PushSpaceKey();
+	PushSpaceKey* pPushSpaceKey = new PushSpaceKey(false);
 
 	m_PtrObjects.push_back(pResultBackGround);
 	m_PtrObjects.push_back(pPushSpaceKey);
@@ -18,7 +19,8 @@ ResultScene::ResultScene() {
 
 ResultScene::~ResultScene() {
 	Lib::GetInstance().CancelTexture("Assets\\GameOver.png");
-	Lib::GetInstance().CancelTexture("Assets\\PushSpaceKey.png");
+	Lib::GetInstance().CancelTexture("Assets\\rPushSpaceKey.png");
+	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
 
 	for (auto itr = m_PtrObjects.begin(); itr != m_PtrObjects.end(); itr++)
 	{
