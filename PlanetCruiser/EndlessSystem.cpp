@@ -4,7 +4,7 @@
 #include<Lib.h>
 #include"MassageManager.h"
 
-const float EndlessSystem::kScrollSpeed = 1.0f;
+const float EndlessSystem::kScrollSpeed = 1.8f;
 const int EndlessSystem::kMaxScrollY = 1280;
 
 EndlessSystem::EndlessSystem() :
@@ -73,6 +73,8 @@ void EndlessSystem::CreatePattern() {
 	delete m_pCurrentPattern;
 	m_pCurrentPattern = m_pNextPattern;
 
+	OutputDebugString("next:");
+
 	if (m_EasyCnt == m_EasyNum) {
 		m_EasyCnt = 0;
 		int percentage= Utility::Random(0, 100);
@@ -90,11 +92,17 @@ void EndlessSystem::CreatePattern() {
 		PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(7, 9);
 		const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
 		m_pNextPattern = new Pattern(asteroidsNext);
+
+		std::string nextKind = std::to_string(patternKind);
+		OutputDebugString(nextKind.c_str());
 	}
 	else {
 		++m_EasyCnt;
 		PatternManager::PATTERN_KIND patternKind = (PatternManager::PATTERN_KIND)Utility::Random(1, 6);
 		const std::vector<Asteroid*>& asteroidsNext = m_pPatternManager->GetPatternInfo(patternKind);
 		m_pNextPattern = new Pattern(asteroidsNext);
+
+		std::string nextKind = std::to_string(patternKind);
+		OutputDebugString(nextKind.c_str());
 	}
 }

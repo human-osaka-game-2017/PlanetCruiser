@@ -19,5 +19,6 @@ private:
 
 	const int kWidth = 550;
 	const int kHeight = 1024;
+	const int kScrollSpeed = 1;
 };
 #endif
