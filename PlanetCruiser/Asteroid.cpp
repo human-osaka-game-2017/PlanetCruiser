@@ -3,7 +3,7 @@
 #include<Lib.h>
 #include<SquareCollider.h>
 #include<ColliderManager.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 
 Asteroid::Asteroid(const AsteroidIniData& astData) :
 	ObjectBase(D3DXVECTOR3(astData.x, astData.y, 0.0f)),
@@ -31,10 +31,10 @@ Asteroid::~Asteroid() {
 
 void Asteroid::Update() {
 	if (m_Pos.y < kSwitchPoint) {
-		m_Pos.y += EndlessSystem::kScrollSpeed + MassageManager::GetInstance().GetScrollAcceleration();
+		m_Pos.y += EndlessSystem::kScrollSpeed + MessageManager::GetInstance().GetScrollAcceleration();
 	}
 	else {
-		m_Pos.y += m_AsteroidData.speed + MassageManager::GetInstance().GetScrollAcceleration();
+		m_Pos.y += m_AsteroidData.speed + MessageManager::GetInstance().GetScrollAcceleration();
 	}
 
 	D3DXVECTOR3 collidePos = m_Pos;

@@ -12,7 +12,7 @@ public:
 	virtual ~Player();
 
 	enum STATE {
-		ALLIVE,
+		ALIVE,
 		CLUSH,
 		DEAD
 	};
@@ -24,8 +24,8 @@ public:
 		return m_WasCllided;
 	}
 
-	static const int kClushPicWidth = 5120;
-	static const int kClushPicHeight = 128;
+	static const int kCrushPicWidth = 5120;
+	static const int kCrushPicHeight = 128;
 
 private:
 	SquareCollider* m_pUpCollider;
@@ -37,7 +37,7 @@ private:
 	unsigned int m_CurrentAnimNo = 0;
 	bool m_IsRight = true;
 	bool m_WasCllided = false;
-	STATE m_CurrentState = ALLIVE;
+	STATE m_CurrentState = ALIVE;
 
 	void Collision();
 	void UpCollision();

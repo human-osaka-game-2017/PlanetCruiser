@@ -3,7 +3,7 @@
 #include<SquareCollider.h>
 #include"Score.h"
 #include<ColliderManager.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 #include"EndlessSystem.h"
 #include"Common.h"
 
@@ -50,7 +50,7 @@ ScoreUp::~ScoreUp()
 }
 
 void ScoreUp::Update() {
-	m_Pos.y+= EndlessSystem::kScrollSpeed + MassageManager::GetInstance().GetScrollAcceleration();
+	m_Pos.y+= EndlessSystem::kScrollSpeed + MessageManager::GetInstance().GetScrollAcceleration();
 	m_pCollider->SetPos(m_Pos);
 }
 

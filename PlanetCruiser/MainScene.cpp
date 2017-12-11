@@ -6,7 +6,7 @@
 #include"Score.h"
 #include<ColliderManager.h>
 #include"Score.h"
-#include"MassageManager.h"
+#include"MessageManager.h"
 #include"ScoreUp.h"
 #include"ItemManager.h"
 
@@ -14,7 +14,7 @@ MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
-	Lib::GetInstance().LoadPictureFile("Assets\\Clush.png", Player::kClushPicWidth, Player::kClushPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\Clush.png", Player::kCrushPicWidth, Player::kCrushPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\ScoreUp.png", ScoreUp::kWidth, ScoreUp::kHeight);
 
 	ObjectBase* player = new Player;
@@ -53,7 +53,7 @@ SceneManager::SCENE_ID MainScene::Update() {
 
 	Score::GetInstance().Update();
 
-	if (MassageManager::GetInstance().GetPlayerState() == Player::STATE::DEAD) {
+	if (MessageManager::GetInstance().GetPlayerState() == Player::STATE::DEAD) {
 		nextScene = SceneManager::SCENE_ID::RESULT;
 	}
 	return nextScene;

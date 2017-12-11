@@ -3,7 +3,7 @@
 #include"ResultBackground.h"
 #include"PushSpaceKey.h"
 #include"Score.h"
-#include"MassageManager.h"
+#include"MessageManager.h"
 
 ResultScene::ResultScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\GameOver.png", ResultBackground::kPicWidth, ResultBackground::kPicHeight);
@@ -36,8 +36,8 @@ SceneManager::SCENE_ID ResultScene::Update() {
 		(*itr)->Update();
 	}
 
-	if (MassageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
-		MassageManager::GetInstance().SetPushSpaceKeyFlg(false);
+	if (MessageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
+		MessageManager::GetInstance().SetPushSpaceKeyFlg(false);
 		nextScene = SceneManager::SCENE_ID::MAIN;
 	}
 

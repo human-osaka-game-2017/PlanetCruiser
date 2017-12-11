@@ -2,7 +2,7 @@
 #include"PatternManager.h"
 #include"Pattern.h"
 #include<Lib.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 
 const float EndlessSystem::kScrollSpeed = 1.8f;
 const int EndlessSystem::kMaxScrollY = 1280;
@@ -41,7 +41,7 @@ EndlessSystem::~EndlessSystem() {
 }
 
 void EndlessSystem::Update() {
-	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
+	if (MessageManager::GetInstance().GetPlayerState() == Player::ALIVE) {
 		++m_ScrollFrCnt;
 		if (Lib::GetInstance().GetKeyState(Utility::KEY_KIND::W) == Utility::BUTTON_STATE::PUSH) {
 			m_ScrollAcceleration += 0.1f;
@@ -49,7 +49,7 @@ void EndlessSystem::Update() {
 		if (m_ScrollFrCnt == 60) {
 			m_ScrollFrCnt = 0;
 			m_ScrollAcceleration += 0.003f;
-			MassageManager::GetInstance().SetScrollAcceleration(m_ScrollAcceleration);
+			MessageManager::GetInstance().SetScrollAcceleration(m_ScrollAcceleration);
 		}
 
 		m_Pos.y += kScrollSpeed + m_ScrollAcceleration;

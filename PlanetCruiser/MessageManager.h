@@ -1,13 +1,13 @@
-#ifndef MASSAGEMANAGER_H
-#define MASSAGEMANAGER_H
+#ifndef MESSAGEMANAGER_H
+#define MESSAGEMANAGER_H
 
 #include"Player.h"
 
-class MassageManager{
+class MessageManager{
 public:
-	static MassageManager& GetInstance() {
+	static MessageManager& GetInstance() {
 		if (m_pInstance == nullptr) {
-			m_pInstance = new MassageManager;
+			m_pInstance = new MessageManager;
 		}
 		return *m_pInstance;
 	}
@@ -37,11 +37,11 @@ public:
 	}
 
 private:
-	static MassageManager* m_pInstance;
-	MassageManager();
-	~MassageManager();
+	static MessageManager* m_pInstance;
+	MessageManager();
+	~MessageManager();
 
-	Player::STATE m_PlayerState = Player::ALLIVE;
+	Player::STATE m_PlayerState = Player::ALIVE;
 	bool m_IsPushingSpaceKey = false;
 	float m_ScrollAcceleration = 0;
 };

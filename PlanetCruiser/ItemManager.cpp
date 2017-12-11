@@ -1,7 +1,7 @@
 #include "ItemManager.h"
 #include"ScoreUp.h"
 #include"EndlessSystem.h"
-#include"MassageManager.h"
+#include"MessageManager.h"
 #include"Common.h"
 #include"Player.h"
 
@@ -17,7 +17,7 @@ ItemManager::~ItemManager() {
 }
 
 void ItemManager::Update() {
-	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
+	if (MessageManager::GetInstance().GetPlayerState() == Player::ALIVE) {
 		if (m_pScoreUp != nullptr) {
 			if (m_pScoreUp != nullptr) {
 				m_pScoreUp->Update();
@@ -35,7 +35,7 @@ void ItemManager::Update() {
 			}
 		}
 
-		m_Pos.y += EndlessSystem::kScrollSpeed + MassageManager::GetInstance().GetScrollAcceleration();
+		m_Pos.y += EndlessSystem::kScrollSpeed + MessageManager::GetInstance().GetScrollAcceleration();
 	}
 }
 

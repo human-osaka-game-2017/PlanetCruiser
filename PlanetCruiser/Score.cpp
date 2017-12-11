@@ -1,7 +1,7 @@
 #include"Score.h"
 #include"Common.h"
 #include<Lib.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 #include<fstream>
 
 Score* Score::m_pInstance = nullptr;
@@ -57,7 +57,7 @@ void Score::Draw() {
 }
 
 void Score::MainSceneUpdate() {
-	if (MassageManager::GetInstance().GetPlayerState() == Player::ALLIVE) {
+	if (MessageManager::GetInstance().GetPlayerState() == Player::ALIVE) {
 		m_FrCnt++;
 		if (m_FrCnt == 30) {
 			m_Score += m_AdditionalScore;

@@ -3,7 +3,7 @@
 #include<Lib.h>
 #include<SquareCollider.h>
 #include<ColliderManager.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 
 Player::Player():
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH/2.0f,700.0f))
@@ -18,7 +18,7 @@ Player::Player():
 	m_pDownCollider = new SquareCollider(std::string("Player"), m_DownCollidePos, std::bind(&Player::DownCollision, this), downSize);
 	ColliderManager::GetInstance().Register(m_pDownCollider);
 
-	MassageManager::GetInstance().SetPlayerState(ALLIVE);
+	MessageManager::GetInstance().SetPlayerState(ALIVE);
 }
 
 Player::~Player() {
@@ -29,7 +29,7 @@ Player::~Player() {
 }
 
 void Player::Update() {
-	if (m_CurrentState == ALLIVE) {
+	if (m_CurrentState == ALIVE) {
 		m_WasCllided = false;
 		if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
 			m_IsRight = !m_IsRight;
@@ -52,7 +52,7 @@ void Player::Update() {
 		//‰æ–Ê’[‚Æ‚Ì”»’è
 		if ((m_Pos.x - kWidth / 2) < 0 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH) {
 			m_CurrentState = CLUSH;
-			MassageManager::GetInstance().SetPlayerState(m_CurrentState);
+			MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
 	else if (m_CurrentState == CLUSH) {
@@ -64,13 +64,13 @@ void Player::Update() {
 
 		if (40 <= m_CurrentAnimNo) {
 			m_CurrentState = DEAD;
-			MassageManager::GetInstance().SetPlayerState(m_CurrentState);
+			MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
 }
 
 void Player::Draw() {
-	if (m_CurrentState == ALLIVE) {
+	if (m_CurrentState == ALIVE) {
 		Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
 	}
 	else if (m_CurrentState == CLUSH) {
@@ -79,9 +79,9 @@ void Player::Draw() {
 }
 
 void Player::Collision() {
-	if (m_CurrentState == ALLIVE) {
+	if (m_CurrentState == ALIVE) {
 		m_CurrentState = CLUSH;
-		MassageManager::GetInstance().SetPlayerState(m_CurrentState);
+		MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 	}
 }
 

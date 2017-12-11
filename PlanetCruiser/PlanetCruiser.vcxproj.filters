@@ -29,9 +29,6 @@
     <ClCompile Include="Score.cpp">
       <Filter>Score</Filter>
     </ClCompile>
-    <ClCompile Include="MassageManager.cpp">
-      <Filter>Massage</Filter>
-    </ClCompile>
     <ClCompile Include="ResultScene.cpp">
       <Filter>Scene\Result</Filter>
     </ClCompile>
@@ -55,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="TitleBackground.cpp">
       <Filter>Scene\Title\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageManager.cpp">
+      <Filter>Message</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +89,6 @@
     <ClInclude Include="Score.h">
       <Filter>Score</Filter>
     </ClInclude>
-    <ClInclude Include="MassageManager.h">
-      <Filter>Massage</Filter>
-    </ClInclude>
     <ClInclude Include="ResultScene.h">
       <Filter>Scene\Result</Filter>
     </ClInclude>
@@ -115,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="TitleBackground.h">
       <Filter>Scene\Title\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageManager.h">
+      <Filter>Message</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,9 +148,6 @@
     <Filter Include="Scene\Result\Obj\Background">
       <UniqueIdentifier>{fe09c87d-452a-4fa2-8a69-2766198f941c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Massage">
-      <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Main\Obj\Item">
       <UniqueIdentifier>{2fab3eea-92b4-4ed2-8abd-eb65194c3b1f}</UniqueIdentifier>
     </Filter>
@@ -165,6 +162,9 @@
     </Filter>
     <Filter Include="Scene\Title\PushSpaceKey">
       <UniqueIdentifier>{2303abb3-cf46-47e7-9feb-d46642896e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message">
+      <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

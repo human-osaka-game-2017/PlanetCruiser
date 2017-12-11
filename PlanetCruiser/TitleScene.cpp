@@ -1,6 +1,6 @@
 #include "TitleScene.h"
 #include<Lib.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 #include"TitleBackground.h"
 #include"PushSpaceKey.h"
 
@@ -34,8 +34,8 @@ SceneManager::SCENE_ID TitleScene::Update() {
 		(*itr)->Update();
 	}
 
-	if (MassageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
-		MassageManager::GetInstance().SetPushSpaceKeyFlg(false);
+	if (MessageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
+		MessageManager::GetInstance().SetPushSpaceKeyFlg(false);
 		nextScene = SceneManager::SCENE_ID::MAIN;
 	}
 

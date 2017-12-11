@@ -1,6 +1,6 @@
 #include "PushSpaceKey.h"
 #include<Lib.h>
-#include"MassageManager.h"
+#include"MessageManager.h"
 
 PushSpaceKey::PushSpaceKey(bool currentSceneIsTitle):
 	ObjectBase(D3DXVECTOR2(270,700)),
@@ -14,7 +14,7 @@ PushSpaceKey::~PushSpaceKey() {
 
 void PushSpaceKey::Update() {
 	if (Lib::GetInstance().GetKeyState(Utility::KEY_KIND::SPACE) == Utility::BUTTON_STATE::PUSH) {
-		MassageManager::GetInstance().SetPushSpaceKeyFlg(true);
+		MessageManager::GetInstance().SetPushSpaceKeyFlg(true);
 	}
 
 	++m_AlphaFrCnt;
