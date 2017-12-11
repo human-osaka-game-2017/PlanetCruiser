@@ -14,7 +14,7 @@ MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
-	Lib::GetInstance().LoadPictureFile("Assets\\Clush.png", Player::kCrushPicWidth, Player::kCrushPicHeight);
+	Lib::GetInstance().LoadPictureFile("Assets\\Crush.png", Player::kCrushPicWidth, Player::kCrushPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\ScoreUp.png", ScoreUp::kWidth, ScoreUp::kHeight);
 
 	ObjectBase* player = new Player;
@@ -31,7 +31,7 @@ MainScene::MainScene() {
 MainScene::~MainScene() {
 	Lib::GetInstance().CancelTexture("Assets\\integ.png");
 	Lib::GetInstance().CancelTexture("Assets\\Background.png");
-	Lib::GetInstance().CancelTexture("Assets\\Clush.png");
+	Lib::GetInstance().CancelTexture("Assets\\Crush.png");
 	Lib::GetInstance().CancelTexture("Assets\\ScoreUp.png");
 	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
 

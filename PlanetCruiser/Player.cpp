@@ -74,7 +74,7 @@ void Player::Draw() {
 		Lib::GetInstance().Draw(m_Pos, "Assets\\integ.png", (float)kWidth, (float)kHeight);
 	}
 	else if (m_CurrentState == CLUSH) {
-		Lib::GetInstance().Draw(m_Pos, "Assets\\Clush.png", (float)kClushWidth, (float)kClushHeight, kClushWidth*m_CurrentAnimNo);
+		Lib::GetInstance().Draw(m_Pos, "Assets\\Crush.png", (float)kClushWidth, (float)kClushHeight, kClushWidth*m_CurrentAnimNo);
 	}
 }
 
