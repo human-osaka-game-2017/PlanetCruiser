@@ -56,6 +56,9 @@
     <ClCompile Include="MessageManager.cpp">
       <Filter>Message</Filter>
     </ClCompile>
+    <ClCompile Include="NewRecord.cpp">
+      <Filter>Scene\Result\Obj\NewRecord</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -116,6 +119,9 @@
     <ClInclude Include="MessageManager.h">
       <Filter>Message</Filter>
     </ClInclude>
+    <ClInclude Include="NewRecord.h">
+      <Filter>Scene\Result\Obj\NewRecord</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -165,6 +171,9 @@
     </Filter>
     <Filter Include="Message">
       <UniqueIdentifier>{e0ad9f2a-b759-4517-87aa-4012cd3c94df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result\Obj\NewRecord">
+      <UniqueIdentifier>{633f8bfd-dd5f-425f-b7ff-ef8a7e0a43e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -136,6 +136,7 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="EndlessSystem.cpp" />
     <ClCompile Include="ItemManager.cpp" />
+    <ClCompile Include="NewRecord.cpp" />
     <ClCompile Include="PushSpaceKey.cpp" />
     <ClCompile Include="ResultBackground.cpp" />
     <ClCompile Include="main.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="EndlessSystem.h" />
     <ClInclude Include="ItemManager.h" />
+    <ClInclude Include="NewRecord.h" />
     <ClInclude Include="PushSpaceKey.h" />
     <ClInclude Include="ResultBackground.h" />
     <ClInclude Include="MainScene.h" />

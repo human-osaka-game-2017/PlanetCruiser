@@ -17,6 +17,16 @@ public:
 	virtual void Draw();
 
 	void SetCurrentScene(SceneManager::SCENE_ID scene) {
+		if (m_CurrentScene == SceneManager::SCENE_ID::MAIN&&scene == SceneManager::SCENE_ID::RESULT) {
+			CompareCurrentScoreWithHighScore();
+		}
+		if (m_CurrentScene == SceneManager::SCENE_ID::RESULT&&scene == SceneManager::SCENE_ID::MAIN) {
+			m_Score = 0;
+			m_AdditionalScore = 10;
+			m_FrCnt = 0;
+			m_ScoreThresholdCnt = 1;
+			isNewRecord = false;
+		}
 		m_CurrentScene = scene;
 	}
 
@@ -26,6 +36,10 @@ public:
 
 	int GetScore() {
 		return m_Score;
+	}
+
+	bool GetNewRecordFlg() {
+		return isNewRecord;
 	}
 
 	static const int kPicWidth = 1024;

@@ -18,21 +18,6 @@ Score::~Score() {
 }
 
 void Score::Update() {
-
-	static  SceneManager::SCENE_ID prevScene = SceneManager::SCENE_ID::MAIN;
-	if (prevScene == SceneManager::SCENE_ID::MAIN&&m_CurrentScene == SceneManager::SCENE_ID::RESULT) {
-		CompareCurrentScoreWithHighScore();
-	}
-	if (prevScene == SceneManager::SCENE_ID::RESULT&&m_CurrentScene == SceneManager::SCENE_ID::MAIN) {
-		m_Score = 0;
-		m_AdditionalScore = 10;
-		m_FrCnt = 0;
-		m_ScoreThresholdCnt = 1;
-		isNewRecord = false;
-	}
-
-	prevScene = m_CurrentScene;
-
 	switch (m_CurrentScene) {
 	case SceneManager::SCENE_ID::MAIN:
 		MainSceneUpdate();

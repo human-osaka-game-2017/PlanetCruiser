@@ -18,8 +18,8 @@ void SceneManager::Run() {
 
 	if (m_CurrentSceneId != nextSceneId) {
 		delete m_pScene;
-		m_pScene = SceneFactory::GetInstance().Create(nextSceneId);
 		Score::GetInstance().SetCurrentScene(nextSceneId);
+		m_pScene = SceneFactory::GetInstance().Create(nextSceneId);
 		m_CurrentSceneId = nextSceneId;
 	}
 }

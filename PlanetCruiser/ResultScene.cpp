@@ -4,6 +4,7 @@
 #include"PushSpaceKey.h"
 #include"Score.h"
 #include"MessageManager.h"
+#include"NewRecord.h"
 
 ResultScene::ResultScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\GameOver.png", ResultBackground::kPicWidth, ResultBackground::kPicHeight);
@@ -15,6 +16,12 @@ ResultScene::ResultScene() {
 
 	m_PtrObjects.push_back(pResultBackGround);
 	m_PtrObjects.push_back(pPushSpaceKey);
+
+	if (Score::GetInstance().GetNewRecordFlg()) {
+		Lib::GetInstance().LoadPictureFile("Assets\\NewRecord.png", NewRecord::kPicWidth, NewRecord::kPicHeight);
+		NewRecord* pNewRecord = new NewRecord;
+		m_PtrObjects.push_back(pNewRecord);
+	}
 }
 
 ResultScene::~ResultScene() {
@@ -25,6 +32,10 @@ ResultScene::~ResultScene() {
 	for (auto itr = m_PtrObjects.begin(); itr != m_PtrObjects.end(); itr++)
 	{
 		delete *itr;
+	}
+
+	if (Score::GetInstance().GetNewRecordFlg()) {
+		Lib::GetInstance().CancelTexture("Assets\\NewRecord.png");
 	}
 }
 
