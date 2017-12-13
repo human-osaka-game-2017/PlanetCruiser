@@ -5,6 +5,8 @@
 #include<ColliderManager.h>
 #include"MessageManager.h"
 
+#include<SoundBufferManager.h>
+
 Player::Player():
 	ObjectBase(D3DXVECTOR2(WINDOW_WIDTH/2.0f,700.0f))
 {
@@ -52,6 +54,7 @@ void Player::Update() {
 		//‰æ–Ê’[‚Æ‚Ì”»’è
 		if ((m_Pos.x - kWidth / 2) < -12 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH + 12) {
 			m_CurrentState = CLUSH;
+			SoundBufferManager::GetInstance().PlayBackSound("Sound\\test.wav", false);
 			MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
@@ -81,6 +84,7 @@ void Player::Draw() {
 void Player::Collision() {
 	if (m_CurrentState == ALIVE) {
 		m_CurrentState = CLUSH;
+		SoundBufferManager::GetInstance().PlayBackSound("Sound\\test.wav", false);
 		MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 	}
 }

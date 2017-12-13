@@ -10,12 +10,16 @@
 #include"ScoreUp.h"
 #include"ItemManager.h"
 
+#include<SoundBufferManager.h>
+
 MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\integ.png", kPicWidth, kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Background.png", Background::kPicWidth, Background::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\fonts.png", Score::kPicWidth, Score::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\Crush.png", Player::kCrushPicWidth, Player::kCrushPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\ScoreUp.png", ScoreUp::kWidth, ScoreUp::kHeight);
+
+	SoundBufferManager::GetInstance().LoadWaveFile("Sound\\test.wav");
 
 	ObjectBase* player = new Player;
 	ObjectBase* background = new Background;

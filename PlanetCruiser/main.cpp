@@ -1,6 +1,7 @@
 #include"Common.h"
 #include<Lib.h>
 #include"SceneManager.h"
+#include<DirectSound.h>
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 	switch (msg)
@@ -71,6 +72,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	ShowCursor(false);
 
 	Lib::CreateInstance(hWnd, hInstance);
+	DirectSound::CreateInstance(hWnd);
 	SceneManager SceneManager;
 
 	MSG msg;
@@ -99,7 +101,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		}
 
 		if (currentTime - prevTime >= 1000) {
-			//Utility::OutputDebug_Number(frCnt, hWnd);
+			Utility::OutputDebug_Number(frCnt, hWnd);
 			frCnt = 0;
 			prevTime = currentTime;
 		}
