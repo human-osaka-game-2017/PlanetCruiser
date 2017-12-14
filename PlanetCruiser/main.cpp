@@ -1,7 +1,6 @@
 #include"Common.h"
 #include<Lib.h>
 #include"SceneManager.h"
-#include<DirectSound.h>
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 	switch (msg)
@@ -72,7 +71,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	ShowCursor(false);
 
 	Lib::CreateInstance(hWnd, hInstance);
-	DirectSound::CreateInstance(hWnd);
 	SceneManager SceneManager;
 
 	MSG msg;
