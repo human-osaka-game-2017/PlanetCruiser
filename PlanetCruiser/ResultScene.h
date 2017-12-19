@@ -16,5 +16,6 @@ public:
 
 private:
 	std::vector<ObjectBase*> m_PtrObjects;
+	std::string m_SoundName;
 };
 #endif

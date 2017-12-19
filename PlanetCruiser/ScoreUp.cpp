@@ -64,6 +64,7 @@ void ScoreUp::Collision() {
 			m_WasTaken = true;
 			int additionalPoint = (((Score::GetInstance().GetScore() / 4) / 10) * 10);
 			Score::GetInstance().AddScore(additionalPoint);
+			Lib::GetInstance().PlayBackSound("Sound\\scoreUp.wav",false);
 			break;
 		}
 	}

@@ -19,7 +19,30 @@ MainScene::MainScene() {
 	Lib::GetInstance().LoadPictureFile("Assets\\Crush.png", Player::kCrushPicWidth, Player::kCrushPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\ScoreUp.png", ScoreUp::kWidth, ScoreUp::kHeight);
 
-	SoundBufferManager::GetInstance().LoadWaveFile("Sound\\test.wav");
+	switch (Utility::Random(1, 4)) {
+	case 1:
+		m_SoundName = "Sound\\bgm1.wav";
+		break;
+
+	case 2:
+  		m_SoundName = "Sound\\bgm2.wav";
+		break;
+
+	case 3:
+		m_SoundName = "Sound\\bgm3.wav";
+		break;
+
+	case 4:
+ 		m_SoundName = "Sound\\bgm4.wav";
+		break;
+	}
+
+	Lib::GetInstance().LoadWaveFile(m_SoundName.c_str());
+	Lib::GetInstance().LoadWaveFile("Sound\\avoid.wav");
+	Lib::GetInstance().LoadWaveFile("Sound\\scoreUp.wav");
+	Lib::GetInstance().LoadWaveFile("Sound\\crush.wav");
+
+	Lib::GetInstance().PlayBackSound(m_SoundName.c_str(), true);
 
 	ObjectBase* player = new Player;
 	ObjectBase* background = new Background;
@@ -38,6 +61,12 @@ MainScene::~MainScene() {
 	Lib::GetInstance().CancelTexture("Assets\\Crush.png");
 	Lib::GetInstance().CancelTexture("Assets\\ScoreUp.png");
 	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
+
+	Lib::GetInstance().StopSound(m_SoundName.c_str());
+	Lib::GetInstance().CancelSound(m_SoundName.c_str());
+	Lib::GetInstance().CancelSound("Sound\\avoid.wav");
+	Lib::GetInstance().CancelSound("Sound\\scoreUp.wav");
+	Lib::GetInstance().CancelSound("Sound\\crush.wav");
 
 	for (auto itr = m_Objects.begin(); itr != m_Objects.end(); itr++)
 	{

@@ -15,6 +15,7 @@ public:
 	virtual void Draw();
 private:
 	std::vector<ObjectBase*> m_Objects;
+	std::string m_SoundName;
 
 	const int kPicWidth = 512;
 	const int kPicHeight = 512;

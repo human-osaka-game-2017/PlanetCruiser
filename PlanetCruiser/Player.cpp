@@ -33,6 +33,7 @@ void Player::Update() {
 		m_WasCllided = false;
 		if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
 			m_IsRight = !m_IsRight;
+			Lib::GetInstance().PlayBackSound("Sound\\avoid.wav", false);
 		}
 
 		if (m_IsRight) {
@@ -52,7 +53,7 @@ void Player::Update() {
 		//‰æ–Ê’[‚Æ‚Ì”»’è
 		if ((m_Pos.x - kWidth / 2) < -12 || (m_Pos.x + kWidth / 2) > WINDOW_WIDTH + 12) {
 			m_CurrentState = CLUSH;
-			Lib::GetInstance().PlayBackSound("Sound\\test.wav", false);
+			Lib::GetInstance().PlayBackSound("Sound\\crush.wav", false);
 			MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 		}
 	}
@@ -82,7 +83,7 @@ void Player::Draw() {
 void Player::Collision() {
 	if (m_CurrentState == ALIVE) {
 		m_CurrentState = CLUSH;
-		Lib::GetInstance().PlayBackSound("Sound\\test.wav", false);
+		Lib::GetInstance().PlayBackSound("Sound\\crush.wav", false);
 		MessageManager::GetInstance().SetPlayerState(m_CurrentState);
 	}
 }

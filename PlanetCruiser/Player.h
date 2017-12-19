@@ -48,9 +48,9 @@ private:
 	const int kHeight = 110;
 	const int kClushWidth = 128;
 	const int kClushHeight = 128;
-	const int kUpCollideWidth = 36;
-	const int kUpCollideHeight = 62;
-	const int kDownCollideWidth = 64;
-	const int kDownCollideHeight = 38;
+	const int kUpCollideWidth = 32;
+	const int kUpCollideHeight = 56;
+	const int kDownCollideWidth = 60;
+	const int kDownCollideHeight = 36;
 };
 #endif

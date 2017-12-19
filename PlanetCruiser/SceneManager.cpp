@@ -2,14 +2,17 @@
 #include"SceneFactory.h"
 #include"TitleScene.h"
 #include"Score.h"
+#include<Lib.h>
 
 SceneManager::SceneManager() :
 	m_pScene(new TitleScene)
 {
+	Lib::GetInstance().LoadWaveFile("Sound\\start.wav");
 }
 
 SceneManager::~SceneManager() {
 	delete m_pScene;
+	Lib::GetInstance().CancelSound("Sound\\start.wav");
 }
 
 void SceneManager::Run() {

@@ -8,6 +8,9 @@ TitleScene::TitleScene(){
 	Lib::GetInstance().LoadPictureFile("Assets\\Title.png", TitleBackground::kPicWidth, TitleBackground::kPicHeight);
 	Lib::GetInstance().LoadPictureFile("Assets\\sPushSpaceKey.png", PushSpaceKey::kPicWidth, PushSpaceKey::kPicHeight);
 
+	Lib::GetInstance().LoadWaveFile("Sound\\bgm0.wav");
+	Lib::GetInstance().PlayBackSound("Sound\\bgm0.wav", true);
+
 	TitleBackground* pTitleBackground = new TitleBackground();
 	PushSpaceKey* pPushSpaceKey = new PushSpaceKey(true);
 
@@ -17,6 +20,8 @@ TitleScene::TitleScene(){
 
 
 TitleScene::~TitleScene(){
+	Lib::GetInstance().StopSound("Sound\\bgm0.wav");
+	Lib::GetInstance().CancelSound("Sound\\bgm0.wav");
 	Lib::GetInstance().CancelTexture("Assets\\Title.png");
 	Lib::GetInstance().CancelTexture("Assets\\sPushSpaceKey.png");
 
@@ -36,6 +41,7 @@ SceneManager::SCENE_ID TitleScene::Update() {
 
 	if (MessageManager::GetInstance().GetPushSpaceKeyFlg() == true) {
 		MessageManager::GetInstance().SetPushSpaceKeyFlg(false);
+		Lib::GetInstance().PlayBackSound("Sound\\start.wav", false);
 		nextScene = SceneManager::SCENE_ID::MAIN;
 	}
 

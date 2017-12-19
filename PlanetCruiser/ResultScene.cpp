@@ -18,13 +18,22 @@ ResultScene::ResultScene() {
 	m_PtrObjects.push_back(pPushSpaceKey);
 
 	if (Score::GetInstance().GetNewRecordFlg()) {
+		m_SoundName = "Sound\\good.wav";
 		Lib::GetInstance().LoadPictureFile("Assets\\NewRecord.png", NewRecord::kPicWidth, NewRecord::kPicHeight);
 		NewRecord* pNewRecord = new NewRecord;
 		m_PtrObjects.push_back(pNewRecord);
 	}
+	else {
+		m_SoundName = "Sound\\result.wav";
+	}
+
+	Lib::GetInstance().LoadWaveFile(m_SoundName.c_str());
+	Lib::GetInstance().PlayBackSound(m_SoundName.c_str(), false);
 }
 
 ResultScene::~ResultScene() {
+	Lib::GetInstance().StopSound(m_SoundName.c_str());
+	Lib::GetInstance().CancelSound(m_SoundName.c_str());
 	Lib::GetInstance().CancelTexture("Assets\\GameOver.png");
 	Lib::GetInstance().CancelTexture("Assets\\rPushSpaceKey.png");
 	Lib::GetInstance().CancelTexture("Assets\\fonts.png");
