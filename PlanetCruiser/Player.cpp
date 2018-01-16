@@ -33,6 +33,7 @@ void Player::Update() {
 		m_WasCllided = false;
 		if (Utility::PUSH == Lib::GetInstance().GetKeyState(Utility::SPACE)) {
 			m_IsRight = !m_IsRight;
+			Lib::GetInstance().StopSound("Sound\\avoid.wav");
 			Lib::GetInstance().PlayBackSound("Sound\\avoid.wav", false);
 		}
 
